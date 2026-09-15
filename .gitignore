@@ -1,0 +1,21 @@
+# Backup folder ? old template files, do not push
+_backup/
+
+# HTML backups created during the build
+*.html.bak
+*.bak
+
+# Editor / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (in case you add tooling later)
+node_modules/
+package-lock.json
+
+# Environment (never commit)
+.env
+.env.local

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ — MANIESTA LABEL</title>
+<meta name="description" content="Frequently asked questions about ordering, sizing, shipping, returns, payments, and product care at MANIESTA LABEL.">
+<link rel="canonical" href="https://manieste.example/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MANIESTA LABEL">
+<meta property="og:title" content="FAQ — MANIESTA LABEL">
+<meta property="og:description" content="Frequently asked questions about ordering, sizing, shipping, returns, payments, and product care at MANIESTA LABEL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close><i class="fas fa-times"></i></button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint"><span>Press</span><kbd>Esc</kbd><span>to close</span><span style="margin-left:auto">Try</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Quick view</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Size guide</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body"><p class="mn-lead">Sizing details are on each product page.</p></div>
+  </div>
+</div>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open><i class="fas fa-search"></i></button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+      <button class="mn-icon-btn mn-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mn-mobile-menu" hidden data-mobile-menu>
+  <button class="mn-mobile-menu__close" type="button" data-menu-toggle>Close</button>
+  <nav><a href="shop.html">Shop</a><a href="about.html">About</a><a href="account.html">Account</a><a href="contact.html">Contact</a><a href="cart.html">Bag</a></nav>
+</div>
+
+<main id="main">
+
+  <div class="mn-container" style="padding-top:24px">
+    <ol class="mn-breadcrumb" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">FAQ</span></li>
+    </ol>
+  </div>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <p class="mn-eyebrow">Help</p>
+      <h1 class="h1 mn-mt-4" style="max-width:20ch">Frequently asked questions</h1>
+      <p class="mn-lead mn-mt-6" style="max-width:60ch">Quick answers to the questions we get most. If yours isn't here, email us.</p>
+    </div>
+  </section>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <div class="mn-content-layout">
+        <aside class="mn-content-toc" aria-label="Table of contents">
+          <p class="mn-content-toc__title">On this page</p>
+          <ul><li><a href="#ordering">Ordering</a></li>
+<li><a href="#sizing">Sizing & fit</a></li>
+<li><a href="#shipping-faq">Shipping</a></li>
+<li><a href="#returns-faq">Returns</a></li>
+<li><a href="#payments">Payments</a></li>
+<li><a href="#care">Product care</a></li>
+<li><a href="#account-faq">Account</a></li></ul>
+        </aside>
+        <div class="mn-prose"><div class="mn-faq-group" id="ordering">
+  <h2>Ordering</h2>
+
+  <details class="mn-faq-item">
+    <summary>How do I place an order?</summary>
+    <p>Browse the <a href="shop.html">shop</a>, click into any product, choose your size and colour, and hit "Add to bag." When you're ready, open the bag from the top-right icon and follow the checkout steps.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Can I change or cancel my order after placing it?</summary>
+    <p>If your order hasn't been dispatched yet, we can usually modify or cancel it. Email <a href="mailto:care@manieste.example">care@manieste.example</a> with your order number as soon as possible. Once the parcel leaves our studio, changes aren't possible — you'd need to wait for delivery and then start a return.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you restock sold-out sizes?</summary>
+    <p>Core pieces like the Signature Drop Shoulder and Premium Essential Tee are restocked regularly. Limited runs from the Atelier collection are usually not restocked. Subscribe to our newsletter to hear about restocks first.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you offer gift wrapping?</summary>
+    <p>Every order ships in a reusable MANIESTA mailer. If you'd like gift wrapping or a handwritten note, add it to your order notes at checkout — we'll include it at no extra cost.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="sizing">
+  <h2>Sizing & fit</h2>
+
+  <details class="mn-faq-item">
+    <summary>How do MANIESTA pieces fit?</summary>
+    <p>Our pieces are cut with a relaxed drop shoulder — slightly wider than standard fits. If you normally wear a Medium in a slim-fit tee, stay with a Medium for a comfortable fit, or size down for something closer to body.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Where can I find the size guide?</summary>
+    <p>Every product page has a "Size guide" link next to the size selector. It shows chest, length, and shoulder measurements in centimetres, garment flat-laid.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>What if I'm between sizes?</summary>
+    <p>Size up for a relaxed, oversized fit. Size down if you want the piece closer to your body. When in doubt, size up — our cottons are pre-shrunk but will loosen slightly over the first few wears.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Will the fabric shrink after washing?</summary>
+    <p>All our cottons are pre-shrunk before cutting, so shrinkage is minimal (under 3% in the first wash). Wash cold and hang dry to keep the fit consistent.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="shipping-faq">
+  <h2>Shipping</h2>
+
+  <details class="mn-faq-item">
+    <summary>How long does delivery take?</summary>
+    <p>1–2 days within Lahore, 2–3 days to Karachi and Islamabad, 3–5 days elsewhere in Pakistan. See the full breakdown on our <a href="shipping.html">shipping page</a>.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you offer free shipping?</summary>
+    <p>Yes — free standard delivery on all orders over <strong>Rs. 5,000</strong>. Under that amount, standard delivery is a flat Rs. 250.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you ship internationally?</summary>
+    <p>International shipping isn't automated on the site yet. Email <a href="mailto:care@manieste.example">care@manieste.example</a> with what you'd like to order and your delivery address, and we'll send you a custom quote within one business day.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Can I track my order?</summary>
+    <p>Yes. You'll receive a tracking number by email and SMS as soon as your order is dispatched.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="returns-faq">
+  <h2>Returns</h2>
+
+  <details class="mn-faq-item">
+    <summary>What's your return policy?</summary>
+    <p>14 days from delivery. Pieces must be unworn, unwashed, with original tags attached and in original packaging. See the full policy on our <a href="returns.html">returns page</a>.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>How long do refunds take?</summary>
+    <p>Card refunds take 5–7 business days to appear. Bank transfers take 3–5 days. Cash on delivery refunds are issued by bank transfer or JazzCash / Easypaisa within 5 business days.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Who pays return shipping?</summary>
+    <p>For orders over Rs. 5,000, we cover return shipping. For smaller orders, return shipping is your responsibility unless the item was defective or we shipped the wrong piece.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you accept exchanges?</summary>
+    <p>We handle exchanges as a return + new order. That's faster and lets you lock in the piece you want before it sells out. Start the return, then place a new order.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="payments">
+  <h2>Payments</h2>
+
+  <details class="mn-faq-item">
+    <summary>What payment methods do you accept?</summary>
+    <p>Credit and debit cards (Visa, Mastercard), bank transfer, JazzCash, Easypaisa, and cash on delivery for orders up to Rs. 20,000.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Is checkout secure?</summary>
+    <p>Yes. All card payments are processed over SSL-encrypted connections through our payment provider. We never see or store your full card details on our servers.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Can I pay in instalments?</summary>
+    <p>Instalment payments aren't available at this time. For large orders, contact us — we can occasionally arrange bank transfer in two parts.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="care">
+  <h2>Product care</h2>
+
+  <details class="mn-faq-item">
+    <summary>How do I care for my MANIESTA pieces?</summary>
+    <p>Machine wash cold, inside out. Do not bleach. Tumble dry low or hang to dry. Warm iron if needed, but avoid ironing directly over any printed or embroidered areas.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Will the colour fade?</summary>
+    <p>Our cotton pieces are dyed in small batches and pre-washed, so colour is stable. Indigo-dyed pieces from the Atelier collection are designed to fade gradually with wear — this is intentional, not a defect.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Do you offer repairs?</summary>
+    <p>We repair manufacturing defects free of charge within 6 months of purchase. Email <a href="mailto:care@manieste.example">care@manieste.example</a> with photos and your order number.</p>
+  </details>
+</div>
+
+<div class="mn-faq-group" id="account-faq">
+  <h2>Account</h2>
+
+  <details class="mn-faq-item">
+    <summary>Do I need an account to place an order?</summary>
+    <p>No — you can check out as a guest. But creating an account lets you save addresses, view order history, and check out faster next time.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>How do I reset my password?</summary>
+    <p>Click "Forgot password" on the <a href="account.html">sign-in page</a> and follow the email link.</p>
+  </details>
+
+  <details class="mn-faq-item">
+    <summary>Still have a question?</summary>
+    <p>Email <a href="mailto:care@manieste.example">care@manieste.example</a>. We reply within one business day, Monday through Friday.</p>
+  </details>
+</div></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__grid">
+      <div>
+        <p class="mn-logo" style="color:var(--mn-bone)">MANIESTA</p>
+        <p style="font-size:13px;max-width:36ch;margin-top:16px;color:var(--mn-stone)">Premium contemporary fashion. Made in Pakistan. Shipped nationwide.</p>
+      </div>
+      <div>
+        <p class="mn-footer__title">Shop</p>
+        <ul class="mn-footer__list">
+          <li><a href="shop.html">All pieces</a></li>
+          <li><a href="shop.html?col=Signature">Signature</a></li>
+          <li><a href="shop.html?col=Atelier">Atelier</a></li>
+          <li><a href="shop.html?col=Studio">Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Help</p>
+        <ul class="mn-footer__list">
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="returns.html">Returns</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Company</p>
+        <ul class="mn-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mn-footer__bottom">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase4.js" defer></script>
+<script src="assets/js/manieste-phase5.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

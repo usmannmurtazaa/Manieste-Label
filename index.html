@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MANIESTA LABEL | Premium Contemporary Fashion</title>
+<meta name="description" content="MANIESTA LABEL is a premium contemporary fashion house based in Pakistan — editorial silhouettes, elevated essentials, cut from long-staple Pakistani cotton. Signature drop shoulders, atelier pieces, and everyday staples.">
+<meta name="theme-color" content="#0E0E0E">
+<link rel="canonical" href="https://manieste.example/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MANIESTA LABEL">
+<meta property="og:title" content="MANIESTA LABEL — Premium Contemporary Fashion, Made in Pakistan">
+<meta property="og:description" content="Editorial silhouettes. Elevated essentials. Cut and sewn in Pakistan.">
+<meta property="og:image" content="https://manieste.example/assets/img/og/manieste-og.jpg">
+<meta property="og:url" content="https://manieste.example/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MANIESTA LABEL — Premium Contemporary Fashion">
+<meta name="twitter:description" content="Editorial silhouettes. Elevated essentials. Made in Pakistan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MANIESTA LABEL",
+  "url": "https://manieste.example/",
+  "logo": "https://manieste.example/assets/img/logo.png",
+  "description": "Premium contemporary fashion brand based in Pakistan.",
+  "address": { "@type": "PostalAddress", "addressCountry": "PK" },
+  "sameAs": []
+}
+</script>
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<!-- Search overlay -->
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close>
+      <i class="fas fa-times"></i>
+    </button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint">
+      <span>Press</span><kbd>Esc</kbd><span>to close</span>
+      <span style="margin-left:auto">Try</span>
+      <kbd>Ctrl</kbd><kbd>K</kbd>
+    </div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary">
+        <span class="mn-tiny">Subtotal</span>
+        <strong data-cart-drawer-subtotal>Rs. 0</strong>
+      </div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- Quick view modal -->
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header">
+      <p class="mn-modal__title">Quick view</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<!-- Size guide modal -->
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header">
+      <p class="mn-modal__title">Size guide</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="mn-modal__body">
+      <p class="mn-lead" style="margin-bottom:24px">Measurements are in centimetres, garment flat-laid.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead>
+          <tr style="border-bottom:1px solid var(--mn-hairline);text-align:left">
+            <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Size</th>
+            <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Chest</th>
+            <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Length</th>
+            <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Shoulder</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XS</td><td>48</td><td>66</td><td>44</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">S</td><td>50</td><td>68</td><td>46</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">M</td><td>53</td><td>70</td><td>48</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">L</td><td>56</td><td>72</td><td>50</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XL</td><td>59</td><td>74</td><td>52</td></tr>
+          <tr><td style="padding:10px 0">XXL</td><td>62</td><td>76</td><td>54</td></tr>
+        </tbody>
+      </table>
+      <p class="mn-small mn-muted mn-mt-6">If you're between sizes, size up for a relaxed fit or down for a closer fit.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Announcement -->
+<div class="mn-announce">
+  Free delivery across Pakistan on orders over Rs. 5,000 — Studio drop now live
+</div>
+
+<!-- Header -->
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open>
+        <i class="fas fa-search"></i>
+      </button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account">
+        <i class="far fa-user"></i>
+      </a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist">
+        <i class="far fa-heart"></i>
+      </a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+      <button class="mn-icon-btn mn-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle>
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mn-mobile-menu" hidden data-mobile-menu>
+  <button class="mn-mobile-menu__close" type="button" data-menu-toggle>Close</button>
+  <nav aria-label="Mobile">
+    <a href="shop.html">Shop</a>
+    <a href="shop.html?sort=new">New</a>
+    <a href="shop.html?sort=featured">Best Sellers</a>
+    <a href="about.html">About</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Bag</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="mn-section mn-section--tight mn-fade-up">
+    <div class="mn-container">
+      <p class="mn-eyebrow">New — Signature Collection</p>
+      <h1 class="mn-display mn-mt-4" style="max-width: 14ch;">Clothing for the way you actually live.</h1>
+      <p class="mn-lead mn-mt-8">Editorial silhouettes. Elevated essentials. Cut from long-staple Pakistani cotton and finished quietly in Lahore.</p>
+      <div class="mn-mt-8" style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="mn-btn" href="shop.html">Shop the collection</a>
+        <a class="mn-btn mn-btn--outline" href="about.html">Read the story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="mn-section">
+    <div class="mn-container">
+      <div class="mn-section-head">
+        <h2 class="h2 mn-section-head__title">Featured</h2>
+        <a class="mn-section-head__link mn-link" href="shop.html">View all</a>
+      </div>
+      <div class="mn-product-grid" data-featured-products></div>
+    </div>
+  </section>
+
+  <!-- Shop by category -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <div class="mn-section-head">
+        <h2 class="h2 mn-section-head__title">Shop by category</h2>
+        <a class="mn-section-head__link mn-link" href="shop.html">View all</a>
+      </div>
+      <div class="mn-category-grid">
+        <a class="mn-category-card" href="shop.html">
+          <img src="assets/img/signature-drop-shoulder-1.jpg" alt="T-Shirts" loading="lazy">
+          <div class="mn-category-card__label">
+            <p class="mn-category-card__title">T-Shirts</p>
+            <p class="mn-category-card__meta">Drops &amp; essentials</p>
+          </div>
+        </a>
+        <a class="mn-category-card" href="shop.html">
+          <img src="assets/img/everyday-drop-shirt-1.jpg" alt="Shirts" loading="lazy">
+          <div class="mn-category-card__label">
+            <p class="mn-category-card__title">Shirts</p>
+            <p class="mn-category-card__meta">Overshirts &amp; button-ups</p>
+          </div>
+        </a>
+        <a class="mn-category-card" href="shop.html">
+          <img src="assets/img/atelier-oversized-drop-1.jpg" alt="Atelier" loading="lazy">
+          <div class="mn-category-card__label">
+            <p class="mn-category-card__title">Atelier</p>
+            <p class="mn-category-card__meta">Limited runs</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-editorial">
+      <div class="mn-editorial__media">
+        <img src="assets/img/atelier-oversized-drop-2.jpg" alt="" loading="lazy">
+      </div>
+      <div class="mn-editorial__content">
+        <p class="mn-editorial__eyebrow">Editorial — 01</p>
+        <h2 class="mn-editorial__title">Cotton from Faisalabad. Cut in Lahore.</h2>
+        <p class="mn-editorial__text">Pakistan grows some of the finest long-staple cotton in the world. We buy it directly from spinning mills in Faisalabad and cut each piece by hand in Lahore — small runs, considered construction, no shortcuts.</p>
+        <a class="mn-btn" href="about.html" style="background:var(--mn-bone);color:var(--mn-ink);border-color:var(--mn-bone);align-self:flex-start">Read the story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New arrivals -->
+  <section class="mn-section">
+    <div class="mn-container">
+      <div class="mn-section-head">
+        <h2 class="h2 mn-section-head__title">New arrivals</h2>
+        <a class="mn-section-head__link mn-link" href="shop.html?sort=new">View all</a>
+      </div>
+      <div class="mn-product-grid" data-new-arrivals></div>
+    </div>
+  </section>
+
+  <!-- Best sellers -->
+  <section class="mn-section">
+    <div class="mn-container">
+      <div class="mn-section-head">
+        <h2 class="h2 mn-section-head__title">Best sellers</h2>
+        <a class="mn-section-head__link mn-link" href="shop.html?sort=featured">View all</a>
+      </div>
+      <div class="mn-product-grid" data-best-sellers></div>
+    </div>
+  </section>
+
+  <!-- Brand story -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container" style="max-width:720px;text-align:center">
+      <p class="mn-eyebrow">The label</p>
+      <h2 class="h2 mn-mt-4">Designed to be worn for years, not seasons.</h2>
+      <p class="mn-lead mn-mt-8" style="margin-inline:auto">
+        MANIESTA LABEL is a premium contemporary fashion house based in Pakistan. We make a small, deliberate catalogue of pieces we want to wear ourselves — cut from fabrics that hold up, finished quietly, and priced without theatre.
+      </p>
+      <a class="mn-btn mn-btn--outline mn-mt-8" href="about.html">About MANIESTA</a>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container" style="max-width:640px;text-align:center">
+      <p class="mn-eyebrow">Newsletter</p>
+      <h2 class="h2 mn-mt-4">First access. Quiet releases.</h2>
+      <p class="mn-lead mn-mt-8" style="margin-inline:auto">One email a month — new pieces, restocks, and editorial. No noise.</p>
+      <form class="mn-mt-8" data-newsletter-form style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <label class="mn-visually-hidden" for="nl-email">Email</label>
+        <input id="nl-email" type="email" class="mn-field" placeholder="Your email" required style="max-width:320px">
+        <button type="submit" class="mn-btn">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__grid">
+      <div>
+        <p class="mn-logo" style="color:var(--mn-bone)">MANIESTA</p>
+        <p style="font-size:13px;max-width:36ch;margin-top:16px;color:var(--mn-stone)">Premium contemporary fashion. Made in Pakistan. Shipped nationwide.</p>
+      </div>
+      <div>
+        <p class="mn-footer__title">Shop</p>
+        <ul class="mn-footer__list">
+          <li><a href="shop.html">All pieces</a></li>
+          <li><a href="shop.html">Signature</a></li>
+          <li><a href="shop.html">Atelier</a></li>
+          <li><a href="shop.html">Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Info</p>
+        <ul class="mn-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Shipping &amp; Returns</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Follow</p>
+        <ul class="mn-footer__list">
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">Pinterest</a></li>
+          <li><a href="#" rel="noopener">Journal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mn-footer__bottom">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

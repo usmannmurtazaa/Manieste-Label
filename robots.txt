@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cart.html
+Disallow: /wishlist.html
+
+Sitemap: https://manieste.example/sitemap.xml

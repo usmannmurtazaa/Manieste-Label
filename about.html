@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — MANIESTA LABEL</title>
+<meta name="description" content="MANIESTA LABEL is a premium contemporary fashion house based in Pakistan. Editorial silhouettes, elevated essentials, cut from long-staple Pakistani cotton and finished in Lahore.">
+<link rel="canonical" href="https://manieste.example/about.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — MANIESTA LABEL">
+<meta property="og:description" content="A premium contemporary fashion house based in Pakistan.">
+<meta property="og:image" content="https://manieste.example/assets/img/og/manieste-og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<!-- Search overlay -->
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close><i class="fas fa-times"></i></button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint"><span>Press</span><kbd>Esc</kbd><span>to close</span><span style="margin-left:auto">Try</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<!-- Cart drawer -->
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<!-- Quick view modal -->
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Quick view</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<!-- Size guide modal -->
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Size guide</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body">
+      <p class="mn-lead" style="margin-bottom:24px">Measurements are in centimetres, garment flat-laid.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr style="border-bottom:1px solid var(--mn-hairline);text-align:left">
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Size</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Chest</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Length</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Shoulder</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XS</td><td>48</td><td>66</td><td>44</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">S</td><td>50</td><td>68</td><td>46</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">M</td><td>53</td><td>70</td><td>48</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">L</td><td>56</td><td>72</td><td>50</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XL</td><td>59</td><td>74</td><td>52</td></tr>
+          <tr><td style="padding:10px 0">XXL</td><td>62</td><td>76</td><td>54</td></tr>
+        </tbody>
+      </table>
+      <p class="mn-small mn-muted mn-mt-6">If you're between sizes, size up for a relaxed fit or down for a closer fit.</p>
+    </div>
+  </div>
+</div>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open><i class="fas fa-search"></i></button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+      <button class="mn-icon-btn mn-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mn-mobile-menu" hidden data-mobile-menu>
+  <button class="mn-mobile-menu__close" type="button" data-menu-toggle>Close</button>
+  <nav aria-label="Mobile">
+    <a href="shop.html">Shop</a>
+    <a href="shop.html?sort=new">New</a>
+    <a href="shop.html?sort=featured">Best Sellers</a>
+    <a href="about.html">About</a>
+    <a href="account.html">Account</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Bag</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- Breadcrumb -->
+  <div class="mn-container" style="padding-top:24px">
+    <ol class="mn-breadcrumb" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">About</span></li>
+    </ol>
+  </div>
+
+  <!-- Hero -->
+  <section class="mn-section mn-section--tight mn-fade-up">
+    <div class="mn-container">
+      <p class="mn-eyebrow">The Label</p>
+      <h1 class="mn-display mn-mt-4" style="max-width:18ch">A label for the way you actually live.</h1>
+      <p class="mn-lead mn-mt-8" style="max-width:60ch">
+        MANIESTA LABEL is a premium contemporary fashion house based in Pakistan. We make a small, deliberate catalogue of pieces we want to wear ourselves — cut from fabrics that hold up, finished quietly, and priced without theatre.
+      </p>
+    </div>
+  </section>
+
+  <!-- Editorial block: cotton from Faisalabad -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-editorial">
+      <div class="mn-editorial__media">
+        <img src="assets/img/signature-drop-shoulder-2.jpg" alt="MANIESTA LABEL garment detail" loading="lazy">
+      </div>
+      <div class="mn-editorial__content">
+        <p class="mn-editorial__eyebrow">Editorial — 01</p>
+        <h2 class="mn-editorial__title">Cotton from Faisalabad. Cut in Lahore.</h2>
+        <p class="mn-editorial__text">
+          Pakistan grows some of the finest long-staple cotton in the world. We buy it directly from spinning mills in Faisalabad and cut each piece by hand in Lahore — small runs, considered construction, no shortcuts.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="mn-section">
+    <div class="mn-container" style="max-width:720px">
+      <p class="mn-eyebrow">Our story</p>
+      <h2 class="h2 mn-mt-4">Built around a small, deliberate catalogue.</h2>
+      <p class="mn-lead mn-mt-8">
+        We started MANIESTA because we were tired of buying the same things twice. Clothes that felt good on day one and fell apart by month three. Pieces that promised a cut and delivered a compromise. We wanted the opposite — a short list of things worth owning, made properly the first time.
+      </p>
+      <p class="mn-lead mn-mt-6">
+        Every silhouette in the catalogue earns its place. We cut, wear, and rewrite each piece dozens of times before it ships. If something isn't right, it doesn't go out. That's why there aren't thirty items for sale at any given time. There are seven or eight. And every one of them is meant to be worn for years.
+      </p>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <div class="mn-section-head">
+        <h2 class="h2 mn-section-head__title">Principles</h2>
+      </div>
+      <div class="mn-product-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:48px">
+        <div>
+          <p class="mn-eyebrow">01 — Fabric</p>
+          <h3 class="h3 mn-mt-4">Long-staple or nothing.</h3>
+          <p class="mn-mt-4" style="color:var(--mn-graphite)">
+            We buy from mills we've visited ourselves. No middlemen, no mystery blends — combed cottons, brushed twills, garment-dyed jerseys, loopback terry.
+          </p>
+        </div>
+        <div>
+          <p class="mn-eyebrow">02 — Make</p>
+          <h3 class="h3 mn-mt-4">Small runs, considered construction.</h3>
+          <p class="mn-mt-4" style="color:var(--mn-graphite)">
+            Numbered batches. Single-needle seams where it matters. No shortcuts, no fast-fashion timelines, no compromising on the finish.
+          </p>
+        </div>
+        <div>
+          <p class="mn-eyebrow">03 — Wear</p>
+          <h3 class="h3 mn-mt-4">Designed to be worn for years.</h3>
+          <p class="mn-mt-4" style="color:var(--mn-graphite)">
+            We don't chase seasons. We refine. Every piece is cut to layer with what you already own and disappear into the way you actually dress.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder's note -->
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container" style="max-width:720px">
+      <div class="mn-account-card">
+        <p class="mn-eyebrow">A note from the founder</p>
+        <p class="mn-lead mn-mt-6" style="font-style:italic">
+          "I started MANIESTA because I couldn't find what I wanted to wear. Nothing fit right, nothing lasted, and everything looked like it was designed for someone else. So we built the label we wanted — small, slow, and honest about what it costs to make something well."
+        </p>
+        <p class="mn-mt-6" style="font-size:14px">
+          <strong>Usman Murtaza</strong><br>
+          <span class="mn-muted" style="font-size:12px;letter-spacing:0.08em">Founder, MANIESTA LABEL</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mn-section">
+    <div class="mn-container" style="text-align:center">
+      <p class="mn-eyebrow">Shop the collection</p>
+      <h2 class="h2 mn-mt-4" style="max-width:20ch;margin-inline:auto">Seven pieces. Every one earns its place.</h2>
+      <a class="mn-btn mn-mt-8" href="shop.html">Shop the collection</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__grid">
+      <div>
+        <p class="mn-logo" style="color:var(--mn-bone)">MANIESTA</p>
+        <p style="font-size:13px;max-width:36ch;margin-top:16px;color:var(--mn-stone)">Premium contemporary fashion. Made in Pakistan. Shipped nationwide.</p>
+      </div>
+      <div>
+        <p class="mn-footer__title">Shop</p>
+        <ul class="mn-footer__list">
+          <li><a href="shop.html">All pieces</a></li>
+          <li><a href="shop.html">Signature</a></li>
+          <li><a href="shop.html">Atelier</a></li>
+          <li><a href="shop.html">Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Info</p>
+        <ul class="mn-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Shipping &amp; Returns</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Follow</p>
+        <ul class="mn-footer__list">
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">Pinterest</a></li>
+          <li><a href="#" rel="noopener">Journal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mn-footer__bottom">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

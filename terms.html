@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — MANIESTA LABEL</title>
+<meta name="description" content="MANIESTA LABEL terms of service — orders, pricing, shipping, returns, IP, and liability.">
+<link rel="canonical" href="https://manieste.example/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MANIESTA LABEL">
+<meta property="og:title" content="Terms of Service — MANIESTA LABEL">
+<meta property="og:description" content="MANIESTA LABEL terms of service — orders, pricing, shipping, returns, IP, and liability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close><i class="fas fa-times"></i></button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint"><span>Press</span><kbd>Esc</kbd><span>to close</span><span style="margin-left:auto">Try</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Quick view</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Size guide</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body"><p class="mn-lead">Sizing details are on each product page.</p></div>
+  </div>
+</div>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open><i class="fas fa-search"></i></button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+      <button class="mn-icon-btn mn-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mn-mobile-menu" hidden data-mobile-menu>
+  <button class="mn-mobile-menu__close" type="button" data-menu-toggle>Close</button>
+  <nav><a href="shop.html">Shop</a><a href="about.html">About</a><a href="account.html">Account</a><a href="contact.html">Contact</a><a href="cart.html">Bag</a></nav>
+</div>
+
+<main id="main">
+
+  <div class="mn-container" style="padding-top:24px">
+    <ol class="mn-breadcrumb" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Terms</span></li>
+    </ol>
+  </div>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <p class="mn-eyebrow">Legal</p>
+      <h1 class="h1 mn-mt-4" style="max-width:20ch">Terms of service</h1>
+      <p class="mn-lead mn-mt-6" style="max-width:60ch">The rules that govern your use of this site and orders placed through it.</p>
+    </div>
+  </section>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <div class="mn-content-layout">
+        <aside class="mn-content-toc" aria-label="Table of contents">
+          <p class="mn-content-toc__title">On this page</p>
+          <ul><li><a href="#acceptance">Acceptance</a></li>
+<li><a href="#orders">Orders</a></li>
+<li><a href="#pricing">Pricing and payment</a></li>
+<li><a href="#shipping-terms">Shipping and delivery</a></li>
+<li><a href="#returns-terms">Returns</a></li>
+<li><a href="#ip">Intellectual property</a></li>
+<li><a href="#conduct">Acceptable use</a></li>
+<li><a href="#liability">Limitation of liability</a></li>
+<li><a href="#law">Governing law</a></li>
+<li><a href="#changes-terms">Changes</a></li>
+<li><a href="#contact-terms">Contact</a></li></ul>
+        </aside>
+        <div class="mn-prose"><p class="mn-legal-meta">Last updated: 16 September 2026</p>
+
+<h2 id="acceptance">Acceptance of terms</h2>
+<p>By accessing or ordering from MANIESTA LABEL (the "Site"), you agree to these Terms of Service. If you don't agree, please don't use the Site.</p>
+
+<h2 id="orders">Orders</h2>
+<p>All orders are subject to acceptance and availability. We reserve the right to:</p>
+<ul>
+  <li>Refuse or cancel any order for any reason, including suspected fraud or pricing errors</li>
+  <li>Limit quantities per customer or per order</li>
+  <li>Require additional verification before dispatching high-value orders</li>
+</ul>
+<p>You'll receive an email confirmation when we accept your order. This confirmation is not a guarantee of dispatch — final acceptance occurs when the order is dispatched from our studio.</p>
+
+<h2 id="pricing">Pricing and payment</h2>
+<p>All prices are listed in Pakistani Rupees (PKR) and include applicable taxes unless stated otherwise. Shipping is calculated at checkout.</p>
+<p>We reserve the right to change prices at any time. Price changes don't affect orders that have already been confirmed.</p>
+<p>Payment must be received in full before dispatch, except for cash-on-delivery orders which are paid at the point of delivery.</p>
+
+<h2 id="shipping-terms">Shipping and delivery</h2>
+<p>Delivery timeframes shown on the Site are estimates and not guarantees. Once an order is handed to our courier, delivery is subject to their timelines and any events outside our control (weather, strikes, customs for international orders).</p>
+<p>Risk of loss passes to you on delivery. If a parcel is lost in transit, we'll work with the courier to resolve it — see our <a href="shipping.html">shipping page</a> for details.</p>
+
+<h2 id="returns-terms">Returns</h2>
+<p>Our return policy is described on the <a href="returns.html">returns page</a> and forms part of these Terms. Pieces must be returned within 14 days of delivery in unworn, tagged condition.</p>
+
+<h2 id="ip">Intellectual property</h2>
+<p>All content on the Site — including photography, product designs, copy, the MANIESTA name and logo, and the site's code and layout — is the property of MANIESTA LABEL and its licensors.</p>
+<p>You may not copy, reproduce, distribute, or create derivative works from any part of the Site without written permission, except for personal, non-commercial use (such as sharing a product link).</p>
+
+<h2 id="conduct">Acceptable use</h2>
+<p>You agree not to:</p>
+<ul>
+  <li>Use the Site for any unlawful purpose</li>
+  <li>Attempt to interfere with the Site's operation, security, or availability</li>
+  <li>Scrape, copy, or systematically extract content from the Site</li>
+  <li>Impersonate MANIESTA LABEL or any of its representatives</li>
+  <li>Submit false information, including fake names, addresses, or payment details</li>
+</ul>
+
+<h2 id="liability">Limitation of liability</h2>
+<p>MANIESTA LABEL is provided on an "as is" basis. To the maximum extent permitted by law, we are not liable for:</p>
+<ul>
+  <li>Indirect, incidental, or consequential damages arising from your use of the Site</li>
+  <li>Loss of data, profits, or business opportunities</li>
+  <li>Errors or omissions in product descriptions or photography</li>
+</ul>
+<p>Our total liability for any claim arising from your use of the Site is limited to the amount you paid for the order giving rise to the claim.</p>
+
+<h2 id="law">Governing law</h2>
+<p>These Terms are governed by the laws of the Islamic Republic of Pakistan. Any disputes will be resolved in the courts of Lahore, Pakistan.</p>
+
+<h2 id="changes-terms">Changes to these terms</h2>
+<p>We may update these Terms from time to time. The "Last updated" date at the top reflects the most recent revision. Continued use of the Site after changes constitutes acceptance of the revised Terms.</p>
+
+<h2 id="contact-terms">Contact</h2>
+<p>Questions about these Terms? Email <a href="mailto:legal@manieste.example">legal@manieste.example</a> or write to:</p>
+<p>MANIESTA LABEL<br>Lahore, Pakistan</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__grid">
+      <div>
+        <p class="mn-logo" style="color:var(--mn-bone)">MANIESTA</p>
+        <p style="font-size:13px;max-width:36ch;margin-top:16px;color:var(--mn-stone)">Premium contemporary fashion. Made in Pakistan. Shipped nationwide.</p>
+      </div>
+      <div>
+        <p class="mn-footer__title">Shop</p>
+        <ul class="mn-footer__list">
+          <li><a href="shop.html">All pieces</a></li>
+          <li><a href="shop.html?col=Signature">Signature</a></li>
+          <li><a href="shop.html?col=Atelier">Atelier</a></li>
+          <li><a href="shop.html?col=Studio">Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Help</p>
+        <ul class="mn-footer__list">
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="returns.html">Returns</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Company</p>
+        <ul class="mn-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mn-footer__bottom">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase4.js" defer></script>
+<script src="assets/js/manieste-phase5.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

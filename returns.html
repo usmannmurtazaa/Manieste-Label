@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Returns & Refunds — MANIESTA LABEL</title>
+<meta name="description" content="MANIESTA LABEL returns policy — 14-day returns, refund timing, exchanges, and how to return a piece.">
+<link rel="canonical" href="https://manieste.example/returns.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MANIESTA LABEL">
+<meta property="og:title" content="Returns & Refunds — MANIESTA LABEL">
+<meta property="og:description" content="MANIESTA LABEL returns policy — 14-day returns, refund timing, exchanges, and how to return a piece.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close><i class="fas fa-times"></i></button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint"><span>Press</span><kbd>Esc</kbd><span>to close</span><span style="margin-left:auto">Try</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Quick view</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Size guide</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body"><p class="mn-lead">Sizing details are on each product page.</p></div>
+  </div>
+</div>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open><i class="fas fa-search"></i></button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+      <button class="mn-icon-btn mn-menu-toggle" type="button" aria-label="Menu" aria-expanded="false" data-menu-toggle><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mn-mobile-menu" hidden data-mobile-menu>
+  <button class="mn-mobile-menu__close" type="button" data-menu-toggle>Close</button>
+  <nav><a href="shop.html">Shop</a><a href="about.html">About</a><a href="account.html">Account</a><a href="contact.html">Contact</a><a href="cart.html">Bag</a></nav>
+</div>
+
+<main id="main">
+
+  <div class="mn-container" style="padding-top:24px">
+    <ol class="mn-breadcrumb" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><span aria-current="page">Returns</span></li>
+    </ol>
+  </div>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <p class="mn-eyebrow">Help</p>
+      <h1 class="h1 mn-mt-4" style="max-width:20ch">Returns & refunds</h1>
+      <p class="mn-lead mn-mt-6" style="max-width:60ch">14-day returns. Unworn, tagged, and in original packaging — no questions asked.</p>
+    </div>
+  </section>
+
+  <section class="mn-section mn-section--tight">
+    <div class="mn-container">
+      <div class="mn-content-layout">
+        <aside class="mn-content-toc" aria-label="Table of contents">
+          <p class="mn-content-toc__title">On this page</p>
+          <ul><li><a href="#window">Return window</a></li>
+<li><a href="#qualifies">What qualifies</a></li>
+<li><a href="#not-qualifies">What doesn't qualify</a></li>
+<li><a href="#how">How to start a return</a></li>
+<li><a href="#refund">Refund timing</a></li>
+<li><a href="#exchanges">Exchanges</a></li>
+<li><a href="#damaged">Damaged or defective items</a></li></ul>
+        </aside>
+        <div class="mn-prose"><h2 id="window">Return window</h2>
+<p>You have <strong>14 days</strong> from the date your order is delivered to initiate a return. After 14 days, we can't accept returns or offer refunds.</p>
+<p>The 14-day window applies to all standard orders. Sale items are eligible too, unless otherwise marked at checkout.</p>
+
+<h2 id="qualifies">What qualifies for a return</h2>
+<p>To be eligible for a return, the piece must be:</p>
+<ul>
+  <li><strong>Unworn and unwashed</strong> — free of body odour, deodorant marks, makeup, and pet hair</li>
+  <li>In <strong>original condition</strong> with all tags attached</li>
+  <li>In its <strong>original packaging</strong> — the reusable mailer or box it arrived in</li>
+  <li>Accompanied by proof of purchase (order number, email confirmation, or receipt)</li>
+</ul>
+
+<h2 id="not-qualifies">What doesn't qualify</h2>
+<ul>
+  <li><strong>Worn, washed, or altered items</strong> — even a single wear disqualifies a return</li>
+  <li><strong>Items without original tags</strong></li>
+  <li><strong>Final sale items</strong> — clearly marked at checkout</li>
+  <li><strong>Underwear and socks</strong> — for hygiene reasons, these are non-returnable</li>
+  <li><strong>Custom or made-to-order pieces</strong></li>
+</ul>
+
+<h2 id="how">How to start a return</h2>
+<ol>
+  <li>Email <a href="mailto:care@manieste.example">care@manieste.example</a> with your order number and the reason for the return.</li>
+  <li>We'll confirm eligibility and send you a return authorization within one business day.</li>
+  <li>Pack the item securely — ideally in the original mailer — and attach the return label we send you.</li>
+  <li>Drop the parcel at the nearest courier location. We'll collect from your address for orders over Rs. 5,000; for smaller orders, you'll need to drop it off.</li>
+</ol>
+
+<h2 id="refund">Refund timing</h2>
+<p>Once we receive and inspect your return (typically within 2 business days of arrival):</p>
+<ul>
+  <li><strong>Card payments:</strong> 5–7 business days for the refund to appear on your statement</li>
+  <li><strong>Bank transfer:</strong> 3–5 business days</li>
+  <li><strong>Cash on delivery orders:</strong> refunded via bank transfer or JazzCash / Easypaisa — we'll ask for your account details when we process the return</li>
+</ul>
+<p>Original shipping costs are non-refundable unless the item was defective or we shipped the wrong piece.</p>
+
+<h2 id="exchanges">Exchanges</h2>
+<p>We handle exchanges as a return + new order. This is faster and lets you lock in the size or colour you want before it sells out. Start the return, and place a new order for the piece you actually want.</p>
+<p>If the exchange is due to our mistake (wrong item, defective piece), we cover shipping both ways and waive any price difference.</p>
+
+<h2 id="damaged">Damaged or defective items</h2>
+<p>If your order arrives damaged, defective, or doesn't match what you ordered:</p>
+<ol>
+  <li>Take photos of the item and packaging within 48 hours of delivery.</li>
+  <li>Email the photos to <a href="mailto:care@manieste.example">care@manieste.example</a> with your order number.</li>
+  <li>We'll arrange a free pickup and either replace the item or issue a full refund — your choice.</li>
+</ol>
+<p>We cover all shipping costs for defective items and offer a full refund including original shipping.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__grid">
+      <div>
+        <p class="mn-logo" style="color:var(--mn-bone)">MANIESTA</p>
+        <p style="font-size:13px;max-width:36ch;margin-top:16px;color:var(--mn-stone)">Premium contemporary fashion. Made in Pakistan. Shipped nationwide.</p>
+      </div>
+      <div>
+        <p class="mn-footer__title">Shop</p>
+        <ul class="mn-footer__list">
+          <li><a href="shop.html">All pieces</a></li>
+          <li><a href="shop.html?col=Signature">Signature</a></li>
+          <li><a href="shop.html?col=Atelier">Atelier</a></li>
+          <li><a href="shop.html?col=Studio">Studio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Help</p>
+        <ul class="mn-footer__list">
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="returns.html">Returns</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mn-footer__title">Company</p>
+        <ul class="mn-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mn-footer__bottom">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase4.js" defer></script>
+<script src="assets/js/manieste-phase5.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

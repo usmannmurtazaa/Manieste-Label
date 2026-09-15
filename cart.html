@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bag — MANIESTA LABEL</title>
+<meta name="description" content="Your MANIESTA LABEL bag.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+<link rel="preload" href="assets/css/manieste.css" as="style">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<div class="mn-search-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Search products" data-search-overlay>
+  <div class="mn-search-overlay__inner">
+    <button class="mn-search-overlay__close" type="button" aria-label="Close search" data-search-close><i class="fas fa-times"></i></button>
+    <form class="mn-search-overlay__form" role="search">
+      <i class="fas fa-search" aria-hidden="true" style="color:var(--mn-stone)"></i>
+      <label class="mn-visually-hidden" for="mn-search-input">Search</label>
+      <input id="mn-search-input" type="search" placeholder="Search pieces, collections..." autocomplete="off">
+      <button type="submit">View all</button>
+    </form>
+    <div class="mn-search-overlay__hint"><span>Press</span><kbd>Esc</kbd><span>to close</span><span style="margin-left:auto">Try</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+    <p class="mn-search-overlay__count" data-search-count></p>
+    <div class="mn-search-overlay__results" data-search-results></div>
+  </div>
+</div>
+
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+      <p class="mn-cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    </div>
+  </div>
+</aside>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Quick view" data-quick-view-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Quick view</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body" data-qv-body></div>
+  </div>
+</div>
+
+<div class="mn-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Size guide" data-size-guide-modal>
+  <div class="mn-modal__scrim"></div>
+  <div class="mn-modal__panel">
+    <div class="mn-modal__header"><p class="mn-modal__title">Size guide</p><button class="mn-drawer__close" type="button" aria-label="Close" data-modal-close><i class="fas fa-times"></i></button></div>
+    <div class="mn-modal__body">
+      <p class="mn-lead" style="margin-bottom:24px">Measurements are in centimetres, garment flat-laid.</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px">
+        <thead><tr style="border-bottom:1px solid var(--mn-hairline);text-align:left">
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Size</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Chest</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Length</th>
+          <th style="padding:8px 0;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;font-size:11px">Shoulder</th>
+        </tr></thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XS</td><td>48</td><td>66</td><td>44</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">S</td><td>50</td><td>68</td><td>46</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">M</td><td>53</td><td>70</td><td>48</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">L</td><td>56</td><td>72</td><td>50</td></tr>
+          <tr style="border-bottom:1px solid var(--mn-hairline)"><td style="padding:10px 0">XL</td><td>59</td><td>74</td><td>52</td></tr>
+          <tr><td style="padding:10px 0">XXL</td><td>62</td><td>76</td><td>54</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <button type="button" class="mn-icon-btn" aria-label="Open search" data-search-open><i class="fas fa-search"></i></button>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="mn-section">
+  <div class="mn-container">
+    <p class="mn-eyebrow">Bag</p>
+    <h1 class="h1 mn-mt-4 mn-mb-8">Your selection</h1>
+    <div data-cart-root></div>
+  </div>
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__bottom" style="border-top:0">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+</body>
+</html>

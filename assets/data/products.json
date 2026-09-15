@@ -1,0 +1,190 @@
+{
+  "currency": "Rs. ",
+  "products": [
+    {
+      "id": "signature-drop-shoulder",
+      "slug": "signature-drop-shoulder",
+      "name": "Signature Drop Shoulder",
+      "collection": "Signature",
+      "category": "T-Shirts",
+      "price": 2990,
+      "salePrice": null,
+      "rating": 4.8,
+      "reviews": 42,
+      "badge": "Signature",
+      "inStock": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Bone", "hex": "#F7F5F1" },
+        { "name": "Ink", "hex": "#0E0E0E" },
+        { "name": "Clay", "hex": "#B8896A" }
+      ],
+      "shortDesc": "Our house silhouette — dropped shoulder, boxy body, structured cotton.",
+      "description": "Cut from 240 GSM combed Pakistani cotton with a slightly weighted hand-feel. Dropped shoulder seams, a boxy body, and a ribbed neckline built to hold shape wash after wash. Finished with a tonal MANIESTA label at the hem.",
+      "specs": ["240 GSM combed cotton", "Dropped shoulder seams", "Boxy, relaxed fit", "Tonal MANIESTA label", "Made in Pakistan"],
+      "images": [
+        "assets/img/signature-drop-shoulder-1.jpg",
+        "assets/img/signature-drop-shoulder-2.jpg",
+        "assets/img/signature-drop-shoulder-3.jpg"
+      ]
+    },
+    {
+      "id": "everyday-drop-shirt",
+      "slug": "everyday-drop-shirt",
+      "name": "Everyday Drop Shirt",
+      "collection": "Everyday",
+      "category": "Shirts",
+      "price": 3490,
+      "salePrice": null,
+      "rating": 4.7,
+      "reviews": 28,
+      "badge": null,
+      "inStock": true,
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Bone", "hex": "#F7F5F1" },
+        { "name": "Graphite", "hex": "#3A3A3A" }
+      ],
+      "shortDesc": "An easy overshirt with a clean placket and a soft, lived-in finish.",
+      "description": "Cut from a brushed cotton twill with a matte finish. Layers cleanly over a tee or under a knit. Straight hem, single chest pocket, relaxed drop at the shoulder.",
+      "specs": ["Brushed cotton twill", "Relaxed drop shoulder", "Single chest pocket", "Mother-of-pearl buttons", "Made in Pakistan"],
+      "images": [
+        "assets/img/everyday-drop-shirt-1.jpg",
+        "assets/img/everyday-drop-shirt-2.jpg",
+        "assets/img/everyday-drop-shirt-3.jpg"
+      ]
+    },
+    {
+      "id": "studio-drop-tee",
+      "slug": "studio-drop-tee",
+      "name": "Studio Drop Tee",
+      "collection": "Studio",
+      "category": "T-Shirts",
+      "price": 1890,
+      "salePrice": 1490,
+      "rating": 4.6,
+      "reviews": 61,
+      "badge": "Sale",
+      "inStock": true,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Chalk", "hex": "#FFFFFF" },
+        { "name": "Ink", "hex": "#0E0E0E" },
+        { "name": "Stone", "hex": "#8C8A85" }
+      ],
+      "shortDesc": "A studio-weight tee with a soft hand and a subtle dropped shoulder.",
+      "description": "The lighter sibling of the Signature — 180 GSM, garment-dyed, and softened in the wash. Built for layering or wearing alone.",
+      "specs": ["180 GSM garment-dyed cotton", "Soft-washed finish", "Subtle drop shoulder", "Tonal MANIESTA label", "Made in Pakistan"],
+      "images": [
+        "assets/img/studio-drop-tee-1.jpg",
+        "assets/img/studio-drop-tee-2.jpg",
+        "assets/img/studio-drop-tee-3.jpg"
+      ]
+    },
+    {
+      "id": "atelier-oversized-drop",
+      "slug": "atelier-oversized-drop",
+      "name": "Atelier Oversized Drop",
+      "collection": "Atelier",
+      "category": "T-Shirts",
+      "price": 4290,
+      "salePrice": null,
+      "rating": 4.9,
+      "reviews": 19,
+      "badge": "Atelier",
+      "inStock": true,
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Bone", "hex": "#F7F5F1" },
+        { "name": "Ink", "hex": "#0E0E0E" }
+      ],
+      "shortDesc": "A heavier, wider take on the drop silhouette, built for the atelier line.",
+      "description": "Part of the Atelier line — a heavier 320 GSM French terry with a wider body, a deeper armhole, and a longer back hem. Numbered and finished by hand.",
+      "specs": ["320 GSM French terry", "Oversized body", "Numbered edition", "Hand-finished hem", "Made in Pakistan"],
+      "images": [
+        "assets/img/atelier-oversized-drop-1.jpg",
+        "assets/img/atelier-oversized-drop-2.jpg",
+        "assets/img/atelier-oversized-drop-3.jpg"
+      ]
+    },
+    {
+      "id": "premium-essential-tee",
+      "slug": "premium-essential-tee",
+      "name": "Premium Essential Tee",
+      "collection": "Essentials",
+      "category": "T-Shirts",
+      "price": 1490,
+      "salePrice": null,
+      "rating": 4.7,
+      "reviews": 128,
+      "badge": "Essential",
+      "inStock": true,
+      "sizes": ["XS", "S", "M", "L", "XL", "XXL"],
+      "colors": [
+        { "name": "Chalk", "hex": "#FFFFFF" },
+        { "name": "Ink", "hex": "#0E0E0E" },
+        { "name": "Stone", "hex": "#8C8A85" },
+        { "name": "Clay", "hex": "#B8896A" }
+      ],
+      "shortDesc": "The tee you reach for first. Clean, straight, endlessly repeatable.",
+      "description": "A regular-fit pima cotton tee with a clean silhouette and a ribbed neckline. The one you buy in threes.",
+      "specs": ["200 GSM pima cotton", "Regular fit", "Ribbed neckline", "Tonal MANIESTA label", "Made in Pakistan"],
+      "images": [
+        "assets/img/premium-pima-drop-tee-1.jpg",
+        "assets/img/premium-pima-drop-tee-2.jpg",
+        "assets/img/premium-pima-drop-tee-3.jpg"
+      ]
+    },
+    {
+      "id": "manieste-essential-shirt",
+      "slug": "manieste-essential-shirt",
+      "name": "Maniesta Essential Shirt",
+      "collection": "Essentials",
+      "category": "Shirts",
+      "price": 3790,
+      "salePrice": null,
+      "rating": 4.8,
+      "reviews": 33,
+      "badge": null,
+      "inStock": true,
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Chalk", "hex": "#FFFFFF" },
+        { "name": "Bone", "hex": "#F7F5F1" }
+      ],
+      "shortDesc": "A clean, unstructured button-up. Wears like a shirt, feels like an overshirt.",
+      "description": "Cut from a washed cotton poplin with a soft drape. Single-needle construction, straight hem, and a relaxed body.",
+      "specs": ["Washed cotton poplin", "Single-needle seams", "Straight hem", "Mother-of-pearl buttons", "Made in Pakistan"],
+      "images": [
+        "assets/img/relaxed-fit-drop-shirt-1.jpg",
+        "assets/img/relaxed-fit-drop-shirt-2.jpg",
+        "assets/img/relaxed-fit-drop-shirt-3.jpg"
+      ]
+    },
+    {
+      "id": "washed-indigo-drop-shirt",
+      "slug": "washed-indigo-drop-shirt",
+      "name": "Washed Indigo Drop Shirt",
+      "collection": "Atelier",
+      "category": "Shirts",
+      "price": 3990,
+      "salePrice": null,
+      "rating": 4.7,
+      "reviews": 22,
+      "badge": "New",
+      "inStock": true,
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": [
+        { "name": "Indigo", "hex": "#3A4A6B" }
+      ],
+      "shortDesc": "An indigo-dyed overshirt with a soft, broken-in hand-feel from day one.",
+      "description": "Dyed in small indigo vats, this shirt picks up character with every wash. Relaxed body, dropped shoulders, straight hem.",
+      "specs": ["Indigo-dyed cotton", "Relaxed body", "Dropped shoulder", "Straight hem", "Made in Pakistan"],
+      "images": [
+        "assets/img/washed-indigo-drop-shirt-1.jpg",
+        "assets/img/washed-indigo-drop-shirt-2.jpg",
+        "assets/img/washed-indigo-drop-shirt-3.jpg"
+      ]
+    }
+  ]
+}
