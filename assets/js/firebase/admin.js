@@ -8,6 +8,7 @@
 
 import { Auth } from './auth.js';
 import { getDb } from './firebase-init.js';
+import './admin-products.js';
 import { FEATURES } from './firebase-config.js';
 
 const $  = (s, c = document) => c.querySelector(s);
@@ -215,35 +216,7 @@ function renderOrdersTab() {
 
 /* ---------- Render: Products tab ---------- */
 function renderProductsTab() {
-  return `
-    <div class="mn-admin-table-wrap">
-      <table class="mn-admin-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Name</th>
-            <th>Collection</th>
-            <th>Category</th>
-            <th>Price</th>
-            <th>Stock</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${state.products.map(p => `
-            <tr>
-              <td style="width:60px"><img src="${escapeHtml(p.images ? p.images[0] : '')}" alt="" style="width:40px;height:52px;object-fit:cover;background:var(--mn-hairline)" onerror="this.style.opacity=0.2"></td>
-              <td><p class="mn-admin-td-name">${escapeHtml(p.name)}</p></td>
-              <td>${escapeHtml(p.collection || '—')}</td>
-              <td>${escapeHtml(p.category || '—')}</td>
-              <td>${fmtRs(p.price)}</td>
-              <td>${p.inStock === false ? '<span class="mn-admin-status" data-status="cancelled">out of stock</span>' : `<span class="mn-admin-status" data-status="delivered">in stock</span>`}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-    <p class="mn-small mn-muted" style="margin-top:20px">Edit products via the Firebase Console for now. Inline editing comes in the next phase.</p>
-  `;
+  return '<div data-products-root></div>';
 }
 
 /* ---------- Render: Order detail modal ---------- */
@@ -337,6 +310,12 @@ function render() {
 
   // Rebind
   bindContentEvents();
+
+  // Mount products UI
+  if (state.currentTab === 'products' && window.MN_AdminProductsUI) {
+    var prodRoot = document.querySelector('[data-products-root]');
+    if (prodRoot) window.MN_AdminProductsUI.renderList(prodRoot);
+  }
 }
 
 /* ---------- Content event binding ---------- */

@@ -4,14 +4,16 @@
 
 **Premium contemporary fashion · Made in Pakistan**
 
-[![Live Site](https://img.shields.io/badge/live-manieste.netlify.app-0E0E0E?style=for-the-badge)](https://manieste.netlify.app)
-[![License](https://img.shields.io/badge/license-private-8C8A85?style=for-the-badge)](#license)
-[![PWA](https://img.shields.io/badge/PWA-installable-B8896A?style=for-the-badge)](#progressive-web-app)
-[![Made in Pakistan](https://img.shields.io/badge/made%20in-Pakistan-1F6F43?style=for-the-badge)](https://en.wikipedia.org/wiki/Pakistan)
+[![Live Site](https://img.shields.io/badge/live-manieste--label.netlify.app-0E0E0E?style=for-the-badge)](https://manieste-label.netlify.app)
+[![Firebase](https://img.shields.io/badge/firebase-auth%20%2B%20firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](#firebase)
+[![Cloudinary](https://img.shields.io/badge/cloudinary-image%20cdn-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](#image-management)
+[![PWA](https://img.shields.io/badge/pwa-installable-B8896A?style=for-the-badge)](#progressive-web-app)
 
-A static ecommerce storefront for **MANIESTA LABEL** - a premium contemporary fashion house based in Pakistan. Built with vanilla HTML, CSS, and JavaScript. No build step, no framework, no backend.
+A production-ready ecommerce storefront for **MANIESTA LABEL** — a premium contemporary fashion house based in Karachi, Pakistan.
 
-[Live Site](https://manieste.netlify.app) · [Report Bug](../../issues) · [Request Feature](../../issues)
+Built with vanilla HTML, CSS, and JavaScript. Firebase for authentication, database, and backend services. Cloudinary for image hosting.
+
+[Live Site](https://manieste-label.netlify.app) · [Report Bug](../../issues) · [Request Feature](../../issues)
 
 </div>
 
@@ -19,80 +21,54 @@ A static ecommerce storefront for **MANIESTA LABEL** - a premium contemporary fa
 
 ## Overview
 
-MANIESTA LABEL is a design-first storefront for a small, deliberate catalogue of premium essentials - drop shoulders, overshirts, hoodies, and studio sets. This repository contains the full frontend: homepage, collection listing, product detail, cart, wishlist, search, account shell, editorial pages, and legal pages.
+MANIESTA LABEL is a design-first ecommerce storefront built around a small, deliberate catalogue — drop shoulders, overshirts, hoodies, and studio sets. This repository contains the full stack: customer storefront, authentication, cart, wishlist, checkout, order management, and an admin CMS.
 
-The site is intentionally framework-free. It ships as static files, deploys anywhere in seconds, and runs entirely client-side. Cart and wishlist state persist through `localStorage`; checkout is a demo placeholder.
-
----
-
-## Preview
-
-> Replace these placeholders with real screenshots after deployment.
-
-| Homepage | Collection | Product |
-|:---:|:---:|:---:|
-| ![Homepage](docs/screenshots/homepage.png) | ![Shop](docs/screenshots/shop.png) | ![Product](docs/screenshots/product.png) |
-
-| Cart Drawer | Mobile | Search |
-|:---:|:---:|:---:|
-| ![Cart](docs/screenshots/cart.png) | ![Mobile](docs/screenshots/mobile.png) | ![Search](docs/screenshots/search.png) |
+The frontend is intentionally framework-free. It ships as static files, deploys anywhere in seconds, and uses Firebase services only where they add real value.
 
 ---
 
 ## Features
 
-### Storefront
-- **Editorial homepage** - hero, featured, category grid, editorial block, new arrivals, best sellers, brand story
-- **Collection listing** with filter drawer, active filter chips, sort, density toggle, and load-more
-- **Product detail** with image gallery, zoom on hover, variant picker, size guide, trust row, recently viewed
-- **Deep-linked filters** - `?cat=T-Shirts&col=Atelier&sort=price-asc` restores full state
-- **Search overlay** - `Ctrl+K` shortcut, instant results, dedicated results page
-- **Cart drawer** - slide-in, focus-trapped, live subtotal
-- **Wishlist** - persistent, viewable, removable
+### Customer Storefront
+- **Editorial homepage** — hero, featured, category grid, editorial block, new arrivals, best sellers, brand story, newsletter
+- **Collection listing** with filter drawer, active filter chips, sort, grid density toggle, load-more pagination
+- **Product detail** — image gallery, zoom on hover, variant picker, size guide, trust row, recently viewed
+- **Deep-linked filters** — `?cat=T-Shirts&col=Atelier&sort=price-asc` restores full state
+- **Search overlay** — `Ctrl+K` shortcut, live results, dedicated results page
+- **Cart drawer** — slide-in, focus-trapped, live subtotal
+- **Wishlist** — persistent, movable to cart
 
-### Product Experience
-- Multiple images per product with cross-fade hover
-- Colour swatches with per-product variants
-- Size selection with active state
-- Sale badges with discount percentage
-- In-stock / out-of-stock indicators
-- Product schema.org JSON-LD (SEO)
+### Authentication & Accounts
+- Email/password sign in, register, and password reset
+- Google sign-in
+- Session persistence across browser restarts
+- Account dashboard with orders and addresses
+- Header dropdown menu for signed-in users (My Account, My Orders, Wishlist, Sign Out)
+- Password reset email delivery via Firebase Auth
 
-### Content & Trust
-- Shipping, returns, FAQ, privacy, and terms pages
-- 24-question FAQ with expandable answers
-- Pakistan-specific shipping, sizing, and payment copy
-- Breadcrumbs on every page
-- Organization + Product structured data
+### Checkout & Orders
+- Full checkout form (contact, shipping address, country, notes)
+- Firestore-backed order creation with item snapshots
+- Order confirmation page with items, address, totals
+- Order history in the account dashboard
+- Guest cart merges into Firestore on sign-in
+- Cart and wishlist sync between devices
 
-### Progressive Web App
-- Installable on Android, iOS, and desktop Chrome
-- Offline-capable via service worker
-- App manifest with 192/512/maskable icons
-- Theme colour `#0E0E0E`, background `#F7F5F1`
+### Admin CMS (`/admin.html`)
+- **Dashboard** — stat cards (total orders, pending, shipped, delivered, revenue)
+- **Products** — full CRUD, draft/publish/archive workflow, Cloudinary image upload, search, filter, pagination
+- **Orders** — filter by status, view details, update status (pending → confirmed → processing → shipped → delivered / cancelled)
+- **Role-based access** — only users with `role: admin` in Firestore can access
 
-### Accessibility
-- Semantic HTML throughout
-- Full keyboard navigation
-- Focus traps on all modals and drawers
-- `aria-live` regions for cart/wishlist updates
-- `prefers-reduced-motion` support
-- WCAG 2.5.5 touch-target compliance
-- Skip-to-content link on every page
-
-### Performance
-- No framework, no jQuery, no runtime dependencies beyond CDN fonts
-- Lazy-loaded images below the fold
-- `fetchpriority="high"` on hero images
-- Prefetch on link hover
-- Zero-JS-friendly fallbacks where possible
-
-### SEO
-- Unique title and description per page
-- Open Graph + Twitter Card metadata
-- Canonical URLs
-- Sitemap and robots.txt
-- JSON-LD for Organization, Product, and Breadcrumbs
+### Technical
+- **Firebase Authentication** — email/password + Google
+- **Cloud Firestore** — products, users, orders, cart, wishlist
+- **Firestore Security Rules** — role-gated writes, user-scoped reads, no client-side admin escalation
+- **Cloudinary** — CDN-backed image hosting, 25 GB free, no card required
+- **PWA** — installable, offline-capable service worker, web app manifest
+- **Responsive** — 320px to 1920px, mobile-first
+- **Accessibility** — keyboard nav, focus traps, ARIA labels, reduced-motion support
+- **SEO** — metadata, Open Graph, JSON-LD, sitemap, robots.txt
 
 ---
 
@@ -101,15 +77,17 @@ The site is intentionally framework-free. It ships as static files, deploys anyw
 | Layer | Technology |
 |---|---|
 | Markup | HTML5 (semantic) |
-| Styles | CSS3 - custom design system in `assets/css/manieste.css` |
-| Behaviour | Vanilla JavaScript (ES5-compatible, no build) |
-| Icons | Font Awesome 5.15.1 (CC BY 4.0 / SIL OFL 1.1 / MIT) |
-| Grid utilities | Bootstrap 5.0.0-beta1 (grid + utilities only, MIT) |
-| Fonts | Cormorant Garamond + Inter via Google Fonts |
+| Styles | CSS3 — custom design system in `assets/css/manieste.css` |
+| Behaviour | Vanilla JavaScript (ES modules for Firebase) |
+| Auth | Firebase Authentication v10 (modular SDK) |
+| Database | Cloud Firestore |
+| Image CDN | Cloudinary |
+| Icons | Font Awesome 5.15.1 |
+| Fonts | Cormorant Garamond + Inter (Google Fonts) |
 | PWA | Service worker + Web App Manifest |
-| State | `localStorage` for cart, wishlist, recently viewed |
+| Hosting | Netlify (auto-deploy from `main`) |
 
-**No build step. No bundler. No package manager.** Clone and open `index.html`.
+**No build step. No package manager. Clone and open.**
 
 ---
 
@@ -117,83 +95,245 @@ The site is intentionally framework-free. It ships as static files, deploys anyw
 
 ```
 manieste-label/
-├── index.html                  Homepage
-├── shop.html                   Collection listing
-├── product.html                Product detail (?p=slug)
-├── search.html                 Search results (?q=query)
-├── cart.html                   Bag page
-├── wishlist.html               Wishlist
-├── account.html                Account UI shell
-├── about.html                  Brand story
-├── contact.html                Contact + form
-├── shipping.html               Shipping information
-├── returns.html                Returns policy
-├── faq.html                    FAQ
-├── privacy.html                Privacy policy
-├── terms.html                  Terms of service
-├── 404.html                    404 fallback
+├── index.html                      Homepage
+├── shop.html                       Collection listing
+├── product.html                    Product detail (?p=slug)
+├── search.html                     Search results
+├── cart.html                       Shopping bag
+├── wishlist.html                   Saved pieces
+├── account.html                    Sign in / register / orders / addresses
+├── checkout.html                   Checkout form
+├── order-confirmation.html         Post-purchase (?order=id)
+├── admin.html                      Admin CMS (role-gated)
+├── about.html · contact.html       Editorial
+├── shipping.html · returns.html    Customer info
+├── faq.html                        FAQ (24 questions)
+├── privacy.html · terms.html       Legal
+├── 404.html                        Not found
 │
-├── manifest.json               PWA manifest
-├── sw.js                       Service worker
-├── robots.txt                  SEO
-├── sitemap.xml                 SEO
-├── _redirects                  Netlify 404 routing
-├── CREDITS.md                  Third-party licenses
-├── README.md                   This file
-├── .gitignore
+├── assets/
+│   ├── css/
+│   │   ├── manieste.css            Design system
+│   │   ├── manieste-pages.css      Page layouts + admin styles
+│   │   ├── manieste-animations.css Motion system
+│   │   └── manieste-states.css     Loading / empty / error states
+│   │
+│   ├── js/
+│   │   ├── main.js                 Storefront core
+│   │   ├── manieste-phase2.js      Drawers, modals, search overlay
+│   │   ├── manieste-phase3.js      Search page, account tabs
+│   │   ├── manieste-phase4.js      PDP: zoom, JSON-LD, recently viewed
+│   │   ├── manieste-phase5.js      Shop filters, chips, density
+│   │   ├── manieste-phase8.js      A11y, live regions, prefetch
+│   │   ├── manieste-responsive.js  Mobile overrides
+│   │   ├── manieste-animations.js  Scroll reveals, stagger
+│   │   ├── manieste-states.js      Skeleton loader orchestrator
+│   │   └── firebase/
+│   │       ├── firebase-config.js      Public config + feature flags
+│   │       ├── firebase-init.js        Lazy SDK loader
+│   │       ├── auth.js                 Auth wrapper
+│   │       ├── auth-ui.js              Account page + header state
+│   │       ├── header-auth.js          User dropdown menu
+│   │       ├── products.js             Products bridge (cache/Firestore/JSON)
+│   │       ├── cart-sync.js            Guest ↔ Firestore cart/wishlist sync
+│   │       ├── orders.js               Order create / get / list
+│   │       ├── checkout.js             Checkout flow
+│   │       ├── order-confirmation.js   Confirmation page
+│   │       ├── admin.js                Admin dashboard
+│   │       └── admin-products.js       Product CRUD + Cloudinary upload
+│   │
+│   ├── data/
+│   │   └── products.json           Seed data (7 products, 5 collections, 4 categories)
+│   │
+│   ├── img/                        Product photography
+│   │   └── icons/                  PWA icons
+│   │
+│   └── webfonts/                   Font Awesome webfonts
 │
-└── assets/
-    ├── css/
-    │   ├── manieste.css        Design system (tokens, components)
-    │   ├── manieste-pages.css  Page-level layouts
-    │   ├── bootstrap.min.css   Library
-    │   └── fontawesome.min.css Library
-    │
-    ├── js/
-    │   ├── main.js             Cart, wishlist, product rendering
-    │   ├── manieste-phase2.js  Drawer, modal, search overlay
-    │   ├── manieste-phase3.js  Search page, account tabs, best sellers
-    │   ├── manieste-phase4.js  PDP: zoom, JSON-LD, recently viewed
-    │   ├── manieste-phase5.js  Shop filters, chips, density, load-more
-    │   ├── manieste-phase8.js  A11y helpers, live regions, prefetch
-    │   └── manieste-responsive.js  Mobile-first overrides
-    │
-    ├── data/
-    │   └── products.json       Product catalogue (7 items)
-    │
-    ├── img/                    Product photography
-    │   └── icons/              PWA icons
-    │
-    └── webfonts/               Font Awesome webfonts
+├── manifest.json                   PWA manifest
+├── sw.js                           Service worker
+├── robots.txt                      SEO
+├── sitemap.xml                     SEO
+├── _redirects                      Netlify 404 routing
+├── FIREBASE_ARCHITECTURE.md        Backend documentation
+├── CREDITS.md                      Third-party licenses
+└── README.md                       This file
 ```
 
 ---
 
-## Local Development
+## Quick Start
 
-The site is static - you only need a local HTTP server. The browser's `file://` protocol blocks `fetch()` for `products.json`, so don't just double-click `index.html`.
+### Local development
 
-### Option A - Python (built into most systems)
+Any static server works. `file://` won't work — the browser blocks `fetch()` for `products.json`.
 
 ```bash
-# Python 3
+# Option A — Python
 python -m http.server 8000
 
-# Python 2
-python -m SimpleHTTPServer 8000
-```
-
-### Option B - Node (`npx`)
-
-```bash
+# Option B — Node
 npx serve .
+
+# Option C — VS Code Live Server
+# Right-click index.html → Open with Live Server
 ```
 
-### Option C - VS Code Live Server
+Open `http://localhost:8000`.
 
-Install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**.
+---
 
-Then open `http://localhost:8000` (or the port your tool uses).
+## Firebase Setup
+
+If you fork this project, replace the config in `assets/js/firebase/firebase-config.js`:
+
+```js
+export const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project",
+  storageBucket: "your-project.firebasestorage.app",
+  messagingSenderId: "...",
+  appId: "..."
+};
+
+export const FEATURES = {
+  AUTH:      true,
+  FIRESTORE: true,
+  STORAGE:   false,
+  ANALYTICS: false
+};
+```
+
+Then in the Firebase Console:
+
+1. **Authentication** → enable Email/Password and Google
+2. **Authentication → Settings → Authorized domains** → add `localhost`, `127.0.0.1`, and your Netlify domain
+3. **Firestore Database** → create in `asia-south1` (Mumbai)
+4. **Firestore Rules** → paste the rules from `FIREBASE_ARCHITECTURE.md`
+5. **Create the composite index** for `orders` (`userId` ASC, `createdAt` DESC)
+
+Full backend documentation is in [`FIREBASE_ARCHITECTURE.md`](FIREBASE_ARCHITECTURE.md).
+
+---
+
+## Cloudinary Setup
+
+Image uploads in the admin use Cloudinary (free forever plan).
+
+1. Sign up at [cloudinary.com](https://cloudinary.com) — no card required
+2. Copy your **cloud name** from the dashboard
+3. **Settings → Upload → Upload presets → Add upload preset**
+   - Preset name: `manieste_unsigned`
+   - Signing mode: **Unsigned**
+   - Folder: `manieste/products`
+   - Save
+4. In `assets/js/firebase/admin-products.js`, set:
+   ```js
+   const CLOUDINARY_CLOUD_NAME = 'your-cloud-name';
+   const CLOUDINARY_UPLOAD_PRESET = 'manieste_unsigned';
+   ```
+
+---
+
+## Making Yourself Admin
+
+Firestore rules prevent users from self-promoting to admin. It must be done manually once:
+
+1. Firebase Console → **Authentication → Users** → copy your UID
+2. **Firestore → Data → Start collection** `users`
+3. Document ID: paste your UID
+4. Add field: `role` (string) = `admin`
+5. Sign out and back in on your site
+
+You can now open `/admin.html`.
+
+---
+
+## Managing Products
+
+### Create a product
+
+1. `/admin.html` → **Products** → **+ New product**
+2. Fill in:
+   - Name, slug (auto-generated from name), short + full description
+   - Price, compare-at price (optional)
+   - Category, collection, stock
+   - Sizes (multi-select)
+   - Colors (name + hex)
+   - Flags: Featured, Best seller, New arrival
+3. Upload images via Cloudinary widget (or paste image URLs)
+4. **Save as draft** or **Create & publish**
+
+### Publishing workflow
+
+| Status | Behavior |
+|---|---|
+| `draft` | Only visible in admin |
+| `published` | Visible on storefront (shop, homepage, search) |
+| `archived` | Hidden from public listings, still in admin |
+
+Toggle with **Publish** / **Unpublish** buttons on the product row.
+
+---
+
+## Managing Orders
+
+Admin → **Orders** tab:
+
+- Filter by status (pending, confirmed, processing, shipped, delivered, cancelled)
+- Click any order → view details in modal
+- Change status via dropdown → saves immediately to Firestore
+
+Order statuses persist. Customers cannot modify their own orders after creation.
+
+---
+
+## Firestore Data Model
+
+### `products/{productId}`
+
+```js
+{
+  name, slug, description, shortDesc,
+  price, salePrice, category, collection,
+  sizes: ["S", "M", "L", "XL"],
+  colors: [{ name, hex }],
+  images: ["https://res.cloudinary.com/..."],
+  stock, inStock, rating, reviews, badge,
+  featured, bestseller, newArrival,
+  status: "draft" | "published" | "archived",
+  createdAt, updatedAt
+}
+```
+
+### `users/{uid}`
+
+```js
+{
+  role: "customer" | "admin",
+  cart: [{ key, id, name, slug, price, image, size, color, qty }],
+  wishlist: ["productId"],
+  updatedAt
+}
+```
+
+### `orders/{orderId}`
+
+```js
+{
+  userId, userEmail,
+  customer: { name, email, phone },
+  shippingAddress: { line1, line2, city, country, postalCode },
+  items: [{ id, name, slug, price, image, size, color, qty }],
+  subtotal, shipping, discount, total, currency,
+  status: "pending" | "confirmed" | "processing" | "shipped" | "delivered" | "cancelled",
+  notes,
+  createdAt, updatedAt
+}
+```
+
+Full schemas and security rules are in [`FIREBASE_ARCHITECTURE.md`](FIREBASE_ARCHITECTURE.md).
 
 ---
 
@@ -205,134 +345,75 @@ Deployed on **Netlify**, auto-built from the `main` branch.
 |---|---|
 | Build command | *(none)* |
 | Publish directory | `.` |
-| Node version | *(none required)* |
 
 Any push to `main` triggers a fresh deploy in ~20 seconds.
 
-### Deploy your own copy
+### Deploy your own
 
-1. Fork this repository
-2. Go to [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import an existing project**
-3. Connect your GitHub account and select your fork
+1. Fork this repo
+2. [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import an existing project**
+3. Connect your GitHub account
 4. Set **Publish directory** to `.`
 5. Deploy
 
-### Alternative hosts
+**After deploy:** Add your Netlify URL to Firebase:
+**Authentication → Settings → Authorized domains → Add domain**
 
-The site works on any static host:
-
-- **Vercel** - zero config, add a `vercel.json` if you want clean URLs
-- **Cloudflare Pages** - same idea, free tier
-- **GitHub Pages** - Settings → Pages → deploy from `main` branch root
-- **Any nginx / Apache server** - just upload the files
-
----
-
-## Customisation
-
-### Adding a product
-
-Edit `assets/data/products.json` and append a new object to the `products` array:
-
-```json
-{
-  "id": "your-product-id",
-  "slug": "your-product-slug",
-  "name": "Product Name",
-  "collection": "Signature",
-  "category": "T-Shirts",
-  "price": 2990,
-  "salePrice": null,
-  "rating": 4.8,
-  "reviews": 42,
-  "badge": "New",
-  "inStock": true,
-  "sizes": ["S", "M", "L", "XL"],
-  "colors": [
-    { "name": "Bone", "hex": "#F7F5F1" },
-    { "name": "Ink", "hex": "#0E0E0E" }
-  ],
-  "shortDesc": "One-line summary.",
-  "description": "Full product description.",
-  "specs": ["Material", "Fit", "Details"],
-  "images": [
-    "assets/img/your-product-1.jpg",
-    "assets/img/your-product-2.jpg",
-    "assets/img/your-product-3.jpg"
-  ]
-}
-```
-
-Save three images to `assets/img/` matching the paths above. Refresh the browser.
-
-### Changing brand colours
-
-All colours are defined as CSS variables in `assets/css/manieste.css`:
-
-```css
-:root {
-  --mn-bone:     #F7F5F1;  /* page background */
-  --mn-ink:      #0E0E0E;  /* primary text, buttons */
-  --mn-clay:     #B8896A;  /* accent, sale badges */
-  --mn-stone:    #8C8A85;  /* meta text */
-  --mn-hairline: #E4E1DA;  /* borders */
-  /* ... */
-}
-```
-
-Change the values there, and every page updates.
-
-### Changing type
-
-Two fonts are loaded from Google Fonts in every HTML `<head>`:
-
-```html
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
-```
-
-Replace with your own pairing, then update `--mn-font-display` and `--mn-font-body` in `manieste.css`.
-
----
-
-## What's Not Included
-
-This is a **frontend-only** storefront. The following are intentionally absent and need a backend to go live as a real shop:
-
-- **Payment processing** - checkout is a demo placeholder. Integrate Stripe, Razorpay, or a local Pakistani gateway (JazzCash, Easypaisa, Safepay).
-- **User authentication** - `account.html` is a UI shell. Sign-in / register / orders / addresses do not persist.
-- **Inventory management** - `inStock` in `products.json` is a static boolean.
-- **Order management** - no database, no admin panel.
-- **Server-side search** - search runs entirely in the browser against the loaded catalogue.
-- **Email** - newsletter and contact forms validate client-side but send nothing.
-
-These are integration points, not bugs.
+Without this, Google sign-in fails on the live site. Email/password still works.
 
 ---
 
 ## Progressive Web App
 
-The site is installable on Android (Chrome), iOS (Safari 16.4+), and desktop Chrome / Edge.
+Installable on Android (Chrome), iOS (Safari 16.4+), and desktop Chrome.
 
-**Android:** Open the site in Chrome → tap the menu → **Install app**.
-**iOS:** Open in Safari → tap Share → **Add to Home Screen**.
-**Desktop:** Look for the ⊕ install icon in the Chrome address bar.
+- **Android:** Chrome menu → Install app
+- **iOS:** Safari Share → Add to Home Screen
+- **Desktop:** ⊕ icon in address bar
 
-The service worker caches core assets for offline use. It does **not** cache on `localhost` to avoid interfering with Live Server.
+The service worker caches core assets for offline use but **skips caching on `localhost`** so Live Server's hot reload works.
 
 ---
 
 ## Accessibility
 
-Tested against WCAG 2.1 AA. Includes:
-
-- Semantic landmarks (`<header>`, `<main>`, `<nav>`, `<footer>`)
-- Skip-to-content link
-- Full keyboard navigation, including drawers and modals
-- Visible focus rings on every interactive element
-- `aria-live` regions announcing cart and wishlist changes
-- `prefers-reduced-motion` respected
+- Semantic HTML landmarks
+- Skip-to-content link on every page
+- Full keyboard navigation with visible focus rings
+- Focus traps on all drawers and modals
+- `aria-live` regions announce cart and wishlist changes
+- `prefers-reduced-motion` fully respected
 - Touch targets ≥ 44×44 px on coarse pointers
-- Forced-colors mode support (Windows High Contrast)
+- Windows High Contrast mode support
+
+---
+
+## Performance
+
+- No framework, no jQuery, no runtime dependencies beyond CDN fonts
+- Lazy-loaded images below the fold
+- `fetchpriority="high"` on hero images
+- Prefetch on link hover via `requestIdleCallback`
+- Products cached 24h in `localStorage` (Firestore quota friendly)
+- Firebase SDK loaded only where needed (module lazy imports)
+
+**Spark plan impact:** ~500 visitors/day uses under 5% of the daily Firestore read quota thanks to caching.
+
+---
+
+## What's Not Included
+
+This is a **frontend + Firebase** storefront. The following require additional work to go live as a fully commercial shop:
+
+- **Payment processing** — checkout creates orders but does not charge cards. Integrate Stripe, Razorpay, or a Pakistani gateway (JazzCash, Easypaisa, Safepay) when ready.
+- **Shipping rate calculation** — flat rate + free-over-₹5,000 logic exists; real carrier integration is future work.
+- **Email notifications** — order confirmations and shipping updates aren't sent yet (would need Cloud Functions or a service like SendGrid).
+- **Inventory decrement on order** — stock is set manually; automatic decrement needs a Cloud Function.
+- **Tax calculation** — no tax logic yet.
+- **Analytics charts** — stat cards exist; time-series charts are planned.
+- **User last-seen tracking** — planned but not yet implemented.
+
+Each is a defined future phase, not a hidden gap.
 
 ---
 
@@ -350,9 +431,13 @@ The frontend structure was originally derived from a third-party ecommerce templ
 
 **Private project.** All rights reserved.
 
-This repository contains proprietary work. Do not redistribute, sublicense, or deploy without written permission from the owner.
+Do not redistribute, sublicense, or deploy without written permission from the owner.
 
-Third-party libraries retain their original licenses (MIT, CC BY 4.0, SIL OFL 1.1, BSD-2-Clause) - see `CREDITS.md` for details.
+Third-party libraries retain their original licenses:
+- Bootstrap — MIT
+- Font Awesome — CC BY 4.0 / SIL OFL 1.1 / MIT
+- Inter font — SIL OFL 1.1
+- Cormorant Garamond font — SIL OFL 1.1
 
 ---
 
@@ -360,7 +445,7 @@ Third-party libraries retain their original licenses (MIT, CC BY 4.0, SIL OFL 1.
 
 **MANIESTA LABEL**
 
-*Premium contemporary fashion · Made in Pakistan*
+*Premium contemporary fashion · Karachi, Pakistan*
 
 [Instagram](#) · [Pinterest](#) · [Journal](#)
 

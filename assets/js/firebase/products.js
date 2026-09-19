@@ -75,6 +75,7 @@ const MN_Products = {
 
     const fsProducts = await fetchFromFirestore();
     if (fsProducts && fsProducts.length) {
+      fsProducts = fsProducts.filter(p => !p.status || p.status === 'published');
       this._products = fsProducts;
       this._source = 'firestore';
       writeCache(fsProducts);
