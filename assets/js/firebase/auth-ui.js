@@ -213,7 +213,7 @@ export async function initAuthUI() {
     waited += 30;
   }
 
-  await Auth.onAuthChange(async (user) => {
+    await Auth.onAuthChange(async (user) => {
     updateHeader(user);
     updateAccountPanels(user);
     if (window.CartSync && window.CartSync.onAuthChange) {

@@ -9,6 +9,7 @@
 import { Auth } from './auth.js';
 import { getDb } from './firebase-init.js';
 import './admin-products.js';
+import './admin-users.js';
 import { FEATURES } from './firebase-config.js';
 
 const $  = (s, c = document) => c.querySelector(s);
@@ -307,6 +308,7 @@ function render() {
   if (state.currentTab === 'dashboard') content.innerHTML = renderDashboard();
   else if (state.currentTab === 'orders') content.innerHTML = renderOrdersTab();
   else if (state.currentTab === 'products') content.innerHTML = renderProductsTab();
+  else if (state.currentTab === 'users') content.innerHTML = '<div data-users-root></div>';
 
   // Rebind
   bindContentEvents();
@@ -316,7 +318,15 @@ function render() {
     var prodRoot = document.querySelector('[data-products-root]');
     if (prodRoot) window.MN_AdminProductsUI.renderList(prodRoot);
   }
+
+  // Mount users UI
+  if (state.currentTab === 'users' && window.MN_AdminUsersUI) {
+    var usersRoot = document.querySelector('[data-users-root]');
+    if (usersRoot) window.MN_AdminUsersUI.render(usersRoot);
+  }
+
 }
+
 
 /* ---------- Content event binding ---------- */
 function bindContentEvents() {
@@ -450,6 +460,7 @@ async function init() {
           <a href="#" data-admin-tab="dashboard">Dashboard</a>
           <a href="#" data-admin-tab="orders">Orders</a>
           <a href="#" data-admin-tab="products">Products</a>
+          <a href="#" data-admin-tab="users">Users</a>
         </nav>
         <div class="mn-admin-nav__footer">
           <p class="mn-small mn-muted">${escapeHtml(user.email || '')}</p>
