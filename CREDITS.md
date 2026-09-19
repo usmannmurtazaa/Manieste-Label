@@ -1,8 +1,8 @@
 @'
-# MANIESTA LABEL — Credits & Licenses
+# MANIESTA LABEL | Credits & Licenses
 
-Project: MANIESTA LABEL — premium contemporary fashion
-Owner: Usman Murtaza — https://usmanmurtaza.netlify.app
+Project: MANIESTA LABEL - premium contemporary fashion
+Owner: Usman Murtaza - https://usmanmurtaza.netlify.app
 
 ## Third-party libraries
 | Library | License | Copyright |

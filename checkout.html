@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout | MANIESTA LABEL</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<aside class="mn-drawer" id="mn-cart-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Shopping bag" data-cart-drawer>
+  <div class="mn-drawer__scrim"></div>
+  <div class="mn-drawer__panel">
+    <div class="mn-drawer__header">
+      <p class="mn-drawer__title">Your bag</p>
+      <button class="mn-drawer__close" type="button" aria-label="Close bag" data-drawer-close><i class="fas fa-times"></i></button>
+    </div>
+    <div class="mn-drawer__body mn-cart-drawer__body" data-cart-drawer-body></div>
+    <div class="mn-drawer__footer">
+      <div class="mn-cart-drawer__summary"><span class="mn-tiny">Subtotal</span><strong data-cart-drawer-subtotal>Rs. 0</strong></div>
+      <a class="mn-btn mn-btn--block" href="cart.html">View bag &amp; checkout</a>
+    </div>
+  </div>
+</aside>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+      <a class="mn-header__link" href="shop.html">Collections</a>
+      <a class="mn-header__link" href="shop.html?sort=new">New</a>
+      <a class="mn-header__link" href="shop.html?sort=featured">Best Sellers</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-header__link" href="about.html">Editorial</a>
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <button type="button" class="mn-icon-btn" aria-label="Open bag" style="position:relative" data-drawer-open="mn-cart-drawer">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="mn-cart-count mn-hidden" data-cart-count>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="mn-section">
+  <div class="mn-container">
+
+    <ol class="mn-breadcrumb" aria-label="Breadcrumb">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cart.html">Bag</a></li>
+      <li><span aria-current="page">Checkout</span></li>
+    </ol>
+
+    <h1 class="h1 mn-mt-4 mn-mb-12">Checkout</h1>
+
+    <!-- Sign-in notice (hidden when signed in) -->
+    <div class="mn-checkout-signin" data-checkout-auth hidden>
+      <strong>Sign in to complete your order.</strong><br>
+      Guest checkout isn't available yet. Sign in with your email or Google account — we'll keep your bag intact.
+    </div>
+
+    <div class="mn-checkout-layout">
+
+      <form class="mn-checkout-form" data-checkout-form novalidate>
+
+        <fieldset>
+          <legend>Contact</legend>
+          <div class="mn-form-grid">
+            <div>
+              <label class="mn-label" for="co-email">Email *</label>
+              <input id="co-email" type="email" class="mn-field" required autocomplete="email">
+            </div>
+            <div>
+              <label class="mn-label" for="co-phone">Phone *</label>
+              <input id="co-phone" type="tel" class="mn-field" required autocomplete="tel" placeholder="03XX-XXXXXXX">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Shipping address</legend>
+          <label class="mn-label" for="co-name">Full name *</label>
+          <input id="co-name" type="text" class="mn-field mn-mb-6" required autocomplete="name">
+
+          <label class="mn-label" for="co-line1">Address line 1 *</label>
+          <input id="co-line1" type="text" class="mn-field mn-mb-6" required autocomplete="address-line1" placeholder="House / street">
+
+          <label class="mn-label" for="co-line2">Address line 2</label>
+          <input id="co-line2" type="text" class="mn-field mn-mb-6" autocomplete="address-line2" placeholder="Apartment, area (optional)">
+
+          <div class="mn-form-grid">
+            <div>
+              <label class="mn-label" for="co-city">City *</label>
+              <input id="co-city" type="text" class="mn-field" required autocomplete="address-level2">
+            </div>
+            <div>
+              <label class="mn-label" for="co-postal">Postal code</label>
+              <input id="co-postal" type="text" class="mn-field" autocomplete="postal-code">
+            </div>
+          </div>
+
+          <label class="mn-label mn-mt-6" for="co-country">Country *</label>
+          <select id="co-country" class="mn-field mn-select" required autocomplete="country">
+            <option value="Pakistan" selected>Pakistan</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+            <option value="Other">Other</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order notes</legend>
+          <label class="mn-label" for="co-notes">Optional</label>
+          <textarea id="co-notes" class="mn-field" placeholder="Delivery instructions, gift note, etc."></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Payment</legend>
+          <div class="mn-alert mn-alert--info">
+            <div>
+              <p class="mn-alert__title">Payment on delivery</p>
+              <p style="margin:0;font-size:13px">You'll pay Rs. 250 COD handling on delivery. Online payment (card, JazzCash, Easypaisa) is coming soon.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="mn-btn mn-btn--block mn-btn-lg" data-place-order>Place order</button>
+        <p class="mn-small mn-muted mn-mt-4" style="text-align:center">By placing your order you agree to our <a href="terms.html" style="text-decoration:underline">Terms</a> and <a href="privacy.html" style="text-decoration:underline">Privacy Policy</a>.</p>
+      </form>
+
+      <aside class="mn-checkout-summary" data-checkout-summary>
+        <div class="mn-loading-block"><span class="mn-spinner"></span></div>
+      </aside>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__bottom" style="border-top:0">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-phase2.js" defer></script>
+<script src="assets/js/manieste-phase3.js" defer></script>
+<script src="assets/js/manieste-phase8.js" defer></script>
+<script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
+
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
+<script type="module" src="./assets/js/firebase/orders.js"></script>
+<script type="module" src="./assets/js/firebase/checkout.js"></script>
+</body>
+</html>

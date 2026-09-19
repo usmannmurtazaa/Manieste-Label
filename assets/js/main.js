@@ -1,15 +1,15 @@
 'use strict';
 
-const CART_KEY     = 'manieste.cart.v1';
-const WISH_KEY     = 'manieste.wishlist.v1';
+const CART_KEY = 'manieste.cart.v1';
+const WISH_KEY = 'manieste.wishlist.v1';
 const IMG_FALLBACK = 'data:image/svg+xml;utf8,' + encodeURIComponent(
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 4"><rect width="3" height="4" fill="#F7F5F1"/><text x="1.5" y="2" text-anchor="middle" font-family="serif" font-size="0.16" fill="#8C8A85" letter-spacing="0.08">MANIESTA</text></svg>'
 );
 
 let CATALOG = [];
-let currency = '₹';
+let currency = 'Rs. ';
 
-const $  = (sel, ctx = document) => ctx.querySelector(sel);
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
 const fmt = (n) => currency + Number(n).toLocaleString('en-PK');
@@ -18,10 +18,10 @@ const escapeHtml = (str) => String(str ?? '').replace(/[&<>"']/g, c => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
 }[c]));
 
-const readJSON  = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
+const readJSON = (key, fallback) => { try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; } };
 const writeJSON = (key, val) => localStorage.setItem(key, JSON.stringify(val));
 
-const productById   = (id)   => CATALOG.find(p => p.id === id);
+const productById = (id) => CATALOG.find(p => p.id === id);
 const productBySlug = (slug) => CATALOG.find(p => p.slug === slug);
 
 const Cart = {
@@ -70,13 +70,12 @@ const Cart = {
     if (!root) return;
     const items = this.get();
     if (!items.length) {
-      root.innerHTML = `
-        <div class="mn-text-center mn-section--tight">
-          <p class="mn-eyebrow">Your bag is empty</p>
-          <h2 class="h2 mn-mt-4">Nothing here yet.</h2>
-          <p class="mn-lead mn-mt-4">Browse the collection and add something you'll wear for years.</p>
-          <a href="shop.html" class="mn-btn mn-mt-8">Shop the collection</a>
-        </div>`;
+      Loading.empty(root, {
+        icon: 'fas fa-shopping-bag',
+        title: 'Your bag is empty',
+        text: "Browse the collection and add something you'll wear for years.",
+        actions: [{ label: 'Shop the collection', href: 'shop.html' }]
+      });
       return;
     }
     root.innerHTML = `
@@ -107,7 +106,7 @@ const Cart = {
           <div class="mn-cart-summary__row"><span>Shipping</span><span>Calculated at checkout</span></div>
           <div class="mn-cart-summary__row mn-cart-summary__row--total"><span>Total</span><span>${fmt(this.subtotal())}</span></div>
           <button type="button" class="mn-btn mn-btn--block mn-mt-8" data-checkout>Checkout</button>
-          <p class="mn-cart-summary__note">Demo storefront — checkout is not connected to a payment processor.</p>
+          <p class="mn-cart-summary__note">Demo storefront - checkout is not connected to a payment processor.</p>
         </aside>
       </div>`;
   },
@@ -125,7 +124,11 @@ const Cart = {
       } else if (e.target.matches('[data-cart-remove]')) {
         this.remove(key);
       } else if (e.target.matches('[data-checkout]')) {
-        Toast.show('Checkout is a demo — connect Stripe / Razorpay to go live.');
+        if (this.count() === 0) {
+          Toast.show('Your bag is empty');
+        } else {
+          window.location.href = 'checkout.html';
+        }
       }
     });
   }
@@ -162,13 +165,12 @@ const Wishlist = {
     const ids = this.get();
     const items = ids.map(productById).filter(Boolean);
     if (!items.length) {
-      root.innerHTML = `
-        <div class="mn-text-center mn-section--tight">
-          <p class="mn-eyebrow">Wishlist</p>
-          <h2 class="h2 mn-mt-4">Nothing saved yet.</h2>
-          <p class="mn-lead mn-mt-4">Tap the heart on any product to keep it here.</p>
-          <a href="shop.html" class="mn-btn mn-mt-8">Shop the collection</a>
-        </div>`;
+      Loading.empty(root, {
+        icon: 'far fa-heart',
+        title: 'Nothing saved yet',
+        text: 'Tap the heart on any product to keep it here.',
+        actions: [{ label: 'Shop the collection', href: 'shop.html' }]
+      });
       return;
     }
     root.innerHTML = `<div class="mn-product-grid">${items.map(ProductCard.render).join('')}</div>`;
@@ -214,7 +216,7 @@ const ProductCard = {
       e.preventDefault();
       const p = productById(btn.dataset.quickAdd);
       if (!p) return;
-      const size  = p.sizes[Math.floor(p.sizes.length / 2)] || p.sizes[0];
+      const size = p.sizes[Math.floor(p.sizes.length / 2)] || p.sizes[0];
       const color = p.colors[0]?.name || 'Default';
       Cart.add(p, size, color, 1);
     });
@@ -225,9 +227,9 @@ const Shop = {
   state: { categories: new Set(), collections: new Set(), sizes: new Set(), sort: 'featured', query: '' },
   apply() {
     let list = CATALOG.slice();
-    if (this.state.categories.size)  list = list.filter(p => this.state.categories.has(p.category));
+    if (this.state.categories.size) list = list.filter(p => this.state.categories.has(p.category));
     if (this.state.collections.size) list = list.filter(p => this.state.collections.has(p.collection));
-    if (this.state.sizes.size)       list = list.filter(p => p.sizes.some(s => this.state.sizes.has(s)));
+    if (this.state.sizes.size) list = list.filter(p => p.sizes.some(s => this.state.sizes.has(s)));
     if (this.state.query) {
       const q = this.state.query.toLowerCase();
       list = list.filter(p =>
@@ -237,10 +239,10 @@ const Shop = {
       );
     }
     switch (this.state.sort) {
-      case 'price-asc':  list.sort((a, b) => (a.salePrice ?? a.price) - (b.salePrice ?? b.price)); break;
+      case 'price-asc': list.sort((a, b) => (a.salePrice ?? a.price) - (b.salePrice ?? b.price)); break;
       case 'price-desc': list.sort((a, b) => (b.salePrice ?? b.price) - (a.salePrice ?? a.price)); break;
-      case 'newest':     list.reverse(); break;
-      default:           list.sort((a, b) => b.rating - a.rating);
+      case 'newest': list.reverse(); break;
+      default: list.sort((a, b) => b.rating - a.rating);
     }
     this.render(list);
   },
@@ -281,7 +283,7 @@ const Shop = {
 
 const ProductDetail = {
   mount(p) {
-    document.title = `${p.name} — MANIESTA LABEL`;
+    document.title = `${p.name} - MANIESTA LABEL`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', p.shortDesc);
     const root = $('[data-product-root]');
@@ -317,7 +319,7 @@ const ProductDetail = {
           <p class="mn-pd__rating">★ ${p.rating} · ${p.reviews} reviews</p>
           <p class="mn-lead mn-mt-8">${escapeHtml(p.description)}</p>
           <div class="mn-pd__field mn-mt-8">
-            <span class="mn-label">Colour — <span data-selected-color>${escapeHtml(p.colors[0].name)}</span></span>
+            <span class="mn-label">Colour - <span data-selected-color>${escapeHtml(p.colors[0].name)}</span></span>
             <div class="mn-pd__colors">${swatchColors}</div>
           </div>
           <div class="mn-pd__field mn-mt-6">
@@ -421,7 +423,7 @@ const Forms = {
         e.preventDefault();
         const email = f.querySelector('input[type=email]');
         if (!email || !email.value) return;
-        Toast.show("Thank you — you're on the list.");
+        Toast.show("Thank you - you're on the list.");
         f.reset();
       });
     });
@@ -429,7 +431,7 @@ const Forms = {
       f.addEventListener('submit', (e) => {
         e.preventDefault();
         if (!f.checkValidity()) { f.reportValidity(); return; }
-        Toast.show("Message received — we'll reply within 1 business day.");
+        Toast.show("Message received - we'll reply within 1 business day.");
         f.reset();
       });
     });
@@ -460,19 +462,68 @@ const PWA = {
   init() {
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
+        navigator.serviceWorker.register('sw.js').catch(() => { });
       });
     }
   }
 };
 
+async function waitForProductsBridge(ms) {
+  const start = Date.now();
+  while (!window.MN_Products && Date.now() - start < (ms || 800)) {
+    await new Promise(r => setTimeout(r, 20));
+  }
+  return window.MN_Products || null;
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
+
+  const shopGrid = document.querySelector('[data-shop-grid]');
+  const featGrid = document.querySelector('[data-featured-products]');
+  const newGrid = document.querySelector('[data-new-arrivals]');
+  const bestGrid = document.querySelector('[data-best-sellers]');
+  if (shopGrid) Loading.productGrid(shopGrid, 6);
+  if (featGrid) Loading.productGrid(featGrid, 4);
+  if (newGrid) Loading.productGrid(newGrid, 4);
+  if (bestGrid) Loading.productGrid(bestGrid, 4);
+
   try {
-    const res = await fetch('assets/data/products.json');
-    const data = await res.json();
-    CATALOG = data.products || [];
-    currency = data.currency || '₹';
-  } catch { CATALOG = []; }
+    let products = null;
+    let currencyValue = 'Rs. ';
+    let source = 'json';
+
+    const bridge = await waitForProductsBridge(800);
+    if (bridge) {
+      const result = await bridge.getAll();
+      if (result && result.products && result.products.length) {
+        products = result.products;
+        currencyValue = result.currency || 'Rs. ';
+        source = result.source;
+      }
+    }
+
+    if (!products || !products.length) {
+      const res = await fetch('assets/data/products.json');
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      products = data.products || [];
+      currencyValue = data.currency || 'Rs. ';
+      source = 'json';
+    }
+
+    CATALOG = products;
+    currency = currencyValue;
+    if (!CATALOG.length) throw new Error('Empty catalog');
+    console.info('[MANIESTA] Products loaded from:', source);
+  } catch (err) {
+    CATALOG = [];
+    const retry = () => location.reload();
+    if (shopGrid) Loading.error(shopGrid, { title: 'Could not load products', text: 'Check your connection and try again.', retry: retry });
+    if (featGrid) Loading.error(featGrid, { title: 'Could not load products', text: 'Check your connection and try again.', retry: retry });
+    if (newGrid) Loading.error(newGrid, { title: 'Could not load products', text: 'Check your connection and try again.', retry: retry });
+    if (bestGrid) Loading.error(bestGrid, { title: 'Could not load products', text: 'Check your connection and try again.', retry: retry });
+    console.warn('[MANIESTA] Product load failed:', err.message);
+  }
 
   Header.bind();
   Cart.bind();
@@ -483,10 +534,10 @@ document.addEventListener('DOMContentLoaded', async () => {
   PWA.init();
   Cart.badge();
 
-  if ($('[data-shop-grid]'))       Shop.apply();
-  if ($('[data-product-root]'))    ProductDetail.load();
-  if ($('[data-cart-root]'))       Cart.render();
-  if ($('[data-wishlist-root]'))   Wishlist.render();
+  if ($('[data-shop-grid]')) Shop.apply();
+  if ($('[data-product-root]')) ProductDetail.load();
+  if ($('[data-cart-root]')) Cart.render();
+  if ($('[data-wishlist-root]')) Wishlist.render();
 
   const featured = $('[data-featured-products]');
   if (featured && CATALOG.length) {
@@ -499,3 +550,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     Wishlist.syncButtons();
   }
 });
+
+window.Cart = Cart;
+window.Wishlist = Wishlist;

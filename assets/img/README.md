@@ -44,4 +44,4 @@ To provide images for the "Essential Drop Shoulder Tee", add:
     /public/images/products/essential-drop-shoulder-tee-2.jpg
     /public/images/products/essential-drop-shoulder-tee-3.jpg
 
-Images are served via `/images/products/...` — no database change required.
+Images are served via `/images/products/...` - no database change required.

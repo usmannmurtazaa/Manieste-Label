@@ -1,0 +1,423 @@
+﻿/* ==========================================================================
+   MANIESTA LABEL — Animation + Transition System
+   Phase 1
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. MOTION TOKENS — unified scale
+   -------------------------------------------------------------------------- */
+:root {
+  /* Durations */
+  --mn-dur-instant: 100ms;
+  --mn-dur-fast:    180ms;
+  --mn-dur-base:    280ms;
+  --mn-dur-slow:    480ms;
+  --mn-dur-editorial: 700ms;
+
+  /* Easing */
+  --mn-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --mn-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --mn-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Scroll reveal distance */
+  --mn-reveal-distance: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   2. APPLY UNIFIED EASING ACROSS EXISTING COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Buttons */
+.mn-btn,
+.btn-mn,
+.mn-icon-btn,
+.mn-chip,
+.mn-pd-size,
+.mn-pd-color {
+  transition:
+    background-color var(--mn-dur-fast) var(--mn-ease-out),
+    color var(--mn-dur-fast) var(--mn-ease-out),
+    border-color var(--mn-dur-fast) var(--mn-ease-out),
+    transform var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-btn:active,
+.btn-mn:active,
+.mn-pd-size:active {
+  transform: translateY(1px);
+}
+
+/* Nav links */
+.mn-header__link,
+.mn-footer a,
+.mn-link {
+  transition: color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+/* Product cards */
+.mn-product-card {
+  transition:
+    border-color var(--mn-dur-base) var(--mn-ease-out),
+    transform var(--mn-dur-base) var(--mn-ease-out);
+}
+
+.mn-product-card__media-link img {
+  transition:
+    transform var(--mn-dur-slow) var(--mn-ease-out),
+    opacity var(--mn-dur-slow) var(--mn-ease-out);
+}
+
+.mn-product-card__wish {
+  transition:
+    background-color var(--mn-dur-fast) var(--mn-ease-out),
+    color var(--mn-dur-fast) var(--mn-ease-out),
+    transform var(--mn-dur-fast) var(--mn-ease-spring);
+}
+
+.mn-product-card__wish:hover {
+  transform: scale(1.08);
+}
+
+.mn-product-card__wish[aria-pressed="true"] {
+  animation: mn-heart-pop var(--mn-dur-base) var(--mn-ease-spring);
+}
+
+@keyframes mn-heart-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* Header — on scroll */
+.mn-header {
+  transition:
+    background-color var(--mn-dur-base) var(--mn-ease-out),
+    border-color var(--mn-dur-base) var(--mn-ease-out),
+    box-shadow var(--mn-dur-base) var(--mn-ease-out);
+}
+
+.mn-header.is-scrolled {
+  box-shadow: 0 1px 0 rgba(14, 14, 14, 0.06);
+}
+
+/* Cart badge — bump on change */
+.mn-cart-count {
+  transition:
+    transform var(--mn-dur-fast) var(--mn-ease-spring),
+    opacity var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-cart-count.is-bumping {
+  animation: mn-badge-bump var(--mn-dur-base) var(--mn-ease-spring);
+}
+
+@keyframes mn-badge-bump {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.28); }
+  100% { transform: scale(1); }
+}
+
+/* Inputs */
+.mn-field,
+.mn-select {
+  transition:
+    border-color var(--mn-dur-fast) var(--mn-ease-out),
+    background-color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+/* Chips */
+.mn-chip {
+  transition:
+    background-color var(--mn-dur-fast) var(--mn-ease-out),
+    color var(--mn-dur-fast) var(--mn-ease-out),
+    border-color var(--mn-dur-fast) var(--mn-ease-out),
+    transform var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-chip:hover {
+  transform: translateY(-1px);
+}
+
+/* Trust items */
+.mn-trust-item {
+  transition: transform var(--mn-dur-base) var(--mn-ease-out);
+}
+
+.mn-trust-row:hover .mn-trust-item {
+  transform: translateY(-2px);
+}
+
+/* Category cards */
+.mn-category-card img {
+  transition: transform var(--mn-dur-editorial) var(--mn-ease-out);
+}
+
+.mn-category-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Details / accordions */
+.mn-pd__details,
+.mn-faq-item {
+  transition: background-color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-pd__details summary,
+.mn-faq-item summary {
+  transition: color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-pd__details summary::after,
+.mn-faq-item summary::after {
+  transition:
+    transform var(--mn-dur-base) var(--mn-ease-out),
+    color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Links — animated underline */
+.mn-link::after,
+.mn-footer a::after,
+.mn-header__link::after {
+  transition: transform var(--mn-dur-base) var(--mn-ease-out);
+}
+
+/* --------------------------------------------------------------------------
+   3. PAGE ENTRANCE — first paint fade
+   -------------------------------------------------------------------------- */
+@keyframes mn-page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.mn-animations-ready main > section:first-child {
+  animation: mn-page-enter var(--mn-dur-slow) var(--mn-ease-out) both;
+}
+
+/* --------------------------------------------------------------------------
+   4. SCROLL REVEAL — opt-in via data-reveal
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--mn-reveal-distance));
+  transition:
+    opacity var(--mn-dur-slow) var(--mn-ease-out),
+    transform var(--mn-dur-slow) var(--mn-ease-out);
+  will-change: opacity, transform;
+}
+
+[data-reveal="left"] {
+  transform: translateX(calc(var(--mn-reveal-distance) * -1));
+}
+[data-reveal="right"] {
+  transform: translateX(var(--mn-reveal-distance));
+}
+[data-reveal="scale"] {
+  transform: scale(0.96);
+}
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Stagger children */
+[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(var(--mn-reveal-distance));
+  transition:
+    opacity var(--mn-dur-slow) var(--mn-ease-out),
+    transform var(--mn-dur-slow) var(--mn-ease-out);
+}
+
+[data-stagger].is-revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+[data-stagger].is-revealed > *:nth-child(1) { transition-delay: 0ms; }
+[data-stagger].is-revealed > *:nth-child(2) { transition-delay: 60ms; }
+[data-stagger].is-revealed > *:nth-child(3) { transition-delay: 120ms; }
+[data-stagger].is-revealed > *:nth-child(4) { transition-delay: 180ms; }
+[data-stagger].is-revealed > *:nth-child(5) { transition-delay: 240ms; }
+[data-stagger].is-revealed > *:nth-child(6) { transition-delay: 300ms; }
+[data-stagger].is-revealed > *:nth-child(7) { transition-delay: 360ms; }
+[data-stagger].is-revealed > *:nth-child(8) { transition-delay: 420ms; }
+
+/* Product grids — auto-apply stagger via JS */
+.mn-product-grid[data-reveal-auto] > *:nth-child(1) { transition-delay: 0ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(2) { transition-delay: 60ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(3) { transition-delay: 120ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(4) { transition-delay: 180ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(5) { transition-delay: 240ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(6) { transition-delay: 300ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(7) { transition-delay: 360ms; }
+.mn-product-grid[data-reveal-auto] > *:nth-child(8) { transition-delay: 420ms; }
+
+/* --------------------------------------------------------------------------
+   5. HERO REVEAL — staggered text + image
+   -------------------------------------------------------------------------- */
+.mn-hero__content > * {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: mn-hero-in var(--mn-dur-editorial) var(--mn-ease-out) forwards;
+}
+
+.mn-hero__content > *:nth-child(1) { animation-delay: 0ms; }
+.mn-hero__content > *:nth-child(2) { animation-delay: 80ms; }
+.mn-hero__content > *:nth-child(3) { animation-delay: 160ms; }
+.mn-hero__content > *:nth-child(4) { animation-delay: 240ms; }
+
+.mn-hero__media {
+  opacity: 0;
+  animation: mn-hero-media-in var(--mn-dur-editorial) var(--mn-ease-out) 200ms forwards;
+}
+
+@keyframes mn-hero-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mn-hero-media-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. IMAGE REVEAL — subtle scale-in on first appearance
+   -------------------------------------------------------------------------- */
+[data-reveal-image] img {
+  opacity: 0;
+  transform: scale(1.02);
+  transition:
+    opacity var(--mn-dur-editorial) var(--mn-ease-out),
+    transform var(--mn-dur-editorial) var(--mn-ease-out);
+}
+
+[data-reveal-image].is-revealed img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   7. TEXT REVEAL — line-by-line on editorial blocks
+   -------------------------------------------------------------------------- */
+[data-reveal-text] > * {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--mn-dur-slow) var(--mn-ease-out),
+    transform var(--mn-dur-slow) var(--mn-ease-out);
+}
+
+[data-reveal-text].is-revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-text].is-revealed > *:nth-child(1) { transition-delay: 0ms; }
+[data-reveal-text].is-revealed > *:nth-child(2) { transition-delay: 100ms; }
+[data-reveal-text].is-revealed > *:nth-child(3) { transition-delay: 200ms; }
+[data-reveal-text].is-revealed > *:nth-child(4) { transition-delay: 300ms; }
+
+/* --------------------------------------------------------------------------
+   8. QUICK ADD — smoother slide-up
+   -------------------------------------------------------------------------- */
+.mn-product-card__quickadd {
+  transition:
+    transform var(--mn-dur-base) var(--mn-ease-out),
+    opacity var(--mn-dur-base) var(--mn-ease-out),
+    background-color var(--mn-dur-fast) var(--mn-ease-out);
+}
+
+.mn-product-card__quickadd:hover {
+  background: var(--mn-graphite);
+}
+
+/* --------------------------------------------------------------------------
+   9. DRAWER + MODAL — spring easing
+   -------------------------------------------------------------------------- */
+.mn-drawer__panel {
+  transition: transform var(--mn-dur-slow) var(--mn-ease-spring);
+}
+
+.mn-drawer__scrim,
+.mn-modal__scrim {
+  transition: opacity var(--mn-dur-base) var(--mn-ease-out);
+}
+
+.mn-modal__panel {
+  transition:
+    transform var(--mn-dur-base) var(--mn-ease-spring),
+    opacity var(--mn-dur-base) var(--mn-ease-out);
+}
+
+/* Search overlay — softer entrance */
+.mn-search-overlay {
+  transition:
+    opacity var(--mn-dur-base) var(--mn-ease-out),
+    visibility var(--mn-dur-base);
+}
+
+/* --------------------------------------------------------------------------
+   10. TOAST — slide up from bottom
+   -------------------------------------------------------------------------- */
+.mn-toast {
+  transition:
+    opacity var(--mn-dur-base) var(--mn-ease-out),
+    transform var(--mn-dur-base) var(--mn-ease-spring);
+}
+
+/* --------------------------------------------------------------------------
+   11. REDUCED MOTION — kill everything
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal].is-revealed,
+  [data-stagger] > *,
+  [data-stagger].is-revealed > *,
+  [data-reveal-text] > *,
+  [data-reveal-text].is-revealed > *,
+  .mn-hero__content > *,
+  .mn-hero__media,
+  [data-reveal-image] img {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .mn-cart-count.is-bumping,
+  .mn-product-card__wish[aria-pressed="true"] {
+    animation: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. SMOOTH PAGE TRANSITIONS — internal links fade out
+   -------------------------------------------------------------------------- */
+body.mn-page-exit {
+  opacity: 0;
+  transition: opacity var(--mn-dur-fast) var(--mn-ease-out);
+}

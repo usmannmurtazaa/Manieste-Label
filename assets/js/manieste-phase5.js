@@ -1,7 +1,7 @@
 'use strict';
 
 /* ==========================================================================
-   MANIESTA LABEL — Phase 5
+   MANIESTA LABEL - Phase 5
    Shop page: filters drawer, chips, load more, density, URL sync
    Overrides Shop.render and augments Shop.apply with pagination
    ========================================================================== */
@@ -306,6 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ShopV2.readDensity();
   ShopV2.updateFilterCounts();
   ShopV2.bindUI();
-  // main.js already called Shop.apply() — but state may now have URL/density applied
+  // main.js already called Shop.apply() - but state may now have URL/density applied
   ShopV2.run();
 });

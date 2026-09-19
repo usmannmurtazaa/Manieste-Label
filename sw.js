@@ -1,4 +1,4 @@
-/* MANIESTA LABEL — Service worker v2
+/* MANIESTA LABEL - Service worker v2
    Safe fetch handler that never returns undefined.
    Dev-friendly: skips caching on localhost.
 */
@@ -21,7 +21,7 @@ const PRECACHE = [
   './manifest.json'
 ];
 
-/* Never cache on localhost — Live Server's HMR breaks otherwise */
+/* Never cache on localhost - Live Server's HMR breaks otherwise */
 const IS_DEV = self.location.hostname === 'localhost'
             || self.location.hostname === '127.0.0.1';
 
@@ -68,7 +68,7 @@ self.addEventListener('fetch', (e) => {
           return res;
         })
         .catch(() => {
-          // Network failed — return cached if we have it, else a valid fallback
+          // Network failed - return cached if we have it, else a valid fallback
           if (cached) return cached;
           return new Response('', { status: 504, statusText: 'Offline' });
         });

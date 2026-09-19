@@ -1,4 +1,4 @@
-{
+﻿{
   "currency": "Rs. ",
   "products": [
     {
@@ -20,7 +20,7 @@
         { "name": "Clay", "hex": "#B8896A" }
       ],
       "shortDesc": "Our house silhouette — dropped shoulder, boxy body, structured cotton.",
-      "description": "Cut from 240 GSM combed Pakistani cotton with a slightly weighted hand-feel. Dropped shoulder seams, a boxy body, and a ribbed neckline built to hold shape wash after wash. Finished with a tonal MANIESTA label at the hem.",
+      "description": "The Signature Drop Shoulder is cut from 240 GSM combed cotton with a slightly weighted hand-feel. Dropped shoulder seams, a boxy body, and a ribbed neckline built to hold shape wash after wash. Finished with a tonal MANIESTA label at the hem.",
       "specs": ["240 GSM combed cotton", "Dropped shoulder seams", "Boxy, relaxed fit", "Tonal MANIESTA label", "Made in Pakistan"],
       "images": [
         "assets/img/signature-drop-shoulder-1.jpg",
@@ -185,6 +185,78 @@
         "assets/img/washed-indigo-drop-shirt-2.jpg",
         "assets/img/washed-indigo-drop-shirt-3.jpg"
       ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "signature",
+      "slug": "signature",
+      "name": "Signature",
+      "description": "Our house silhouettes — the pieces we're known for.",
+      "featured": true,
+      "order": 1
+    },
+    {
+      "id": "atelier",
+      "slug": "atelier",
+      "name": "Atelier",
+      "description": "Limited runs, hand-finished, numbered.",
+      "featured": true,
+      "order": 2
+    },
+    {
+      "id": "studio",
+      "slug": "studio",
+      "name": "Studio",
+      "description": "Lighter weights, softer hands — built for layering.",
+      "featured": false,
+      "order": 3
+    },
+    {
+      "id": "essentials",
+      "slug": "essentials",
+      "name": "Essentials",
+      "description": "The pieces you buy in threes.",
+      "featured": true,
+      "order": 4
+    },
+    {
+      "id": "everyday",
+      "slug": "everyday",
+      "name": "Everyday",
+      "description": "Easy overshirts and lived-in staples.",
+      "featured": false,
+      "order": 5
+    }
+  ],
+  "categories": [
+    {
+      "id": "t-shirts",
+      "slug": "t-shirts",
+      "name": "T-Shirts",
+      "description": "Drops & essentials",
+      "order": 1
+    },
+    {
+      "id": "shirts",
+      "slug": "shirts",
+      "name": "Shirts",
+      "description": "Overshirts & button-ups",
+      "order": 2
+    },
+    {
+      "id": "hoodies",
+      "slug": "hoodies",
+      "name": "Hoodies",
+      "description": "Heavyweight loopback",
+      "order": 3
+    },
+    {
+      "id": "sets",
+      "slug": "sets",
+      "name": "Sets",
+      "description": "Matched pieces",
+      "order": 4
     }
   ]
 }

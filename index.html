@@ -1,20 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-PK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MANIESTA LABEL | Premium Contemporary Fashion</title>
-<meta name="description" content="MANIESTA LABEL is a premium contemporary fashion house based in Pakistan — editorial silhouettes, elevated essentials, cut from long-staple Pakistani cotton. Signature drop shoulders, atelier pieces, and everyday staples.">
+<title>MANIESTA LABEL | Premium Fashion</title>
+<meta name="description" content="MANIESTA LABEL is a premium contemporary fashion house based in Pakistan - editorial silhouettes, elevated essentials, cut from long-staple Pakistani cotton. Signature drop shoulders, atelier pieces, and everyday staples.">
 <meta name="theme-color" content="#0E0E0E">
 <link rel="canonical" href="https://manieste.example/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MANIESTA LABEL">
-<meta property="og:title" content="MANIESTA LABEL — Premium Contemporary Fashion, Made in Pakistan">
+<meta property="og:title" content="MANIESTA LABEL - Premium Contemporary Fashion, Made in Pakistan">
 <meta property="og:description" content="Editorial silhouettes. Elevated essentials. Cut and sewn in Pakistan.">
 <meta property="og:image" content="https://manieste.example/assets/img/og/manieste-og.jpg">
 <meta property="og:url" content="https://manieste.example/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MANIESTA LABEL — Premium Contemporary Fashion">
+<meta name="twitter:title" content="MANIESTA LABEL - Premium Contemporary Fashion">
 <meta name="twitter:description" content="Editorial silhouettes. Elevated essentials. Made in Pakistan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +23,11 @@
 <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/css/manieste.css">
 <link rel="stylesheet" href="assets/css/manieste-pages.css">
-<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-icon.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -140,7 +142,7 @@
 
 <!-- Announcement -->
 <div class="mn-announce">
-  Free delivery across Pakistan on orders over Rs. 5,000 — Studio drop now live
+  Free delivery across Pakistan on orders over Rs. 5,000 - Studio drop now live
 </div>
 
 <!-- Header -->
@@ -191,14 +193,25 @@
 <main id="main">
 
   <!-- Hero -->
-  <section class="mn-section mn-section--tight mn-fade-up">
+  <section class="mn-hero">
     <div class="mn-container">
-      <p class="mn-eyebrow">New — Signature Collection</p>
-      <h1 class="mn-display mn-mt-4" style="max-width: 14ch;">Clothing for the way you actually live.</h1>
-      <p class="mn-lead mn-mt-8">Editorial silhouettes. Elevated essentials. Cut from long-staple Pakistani cotton and finished quietly in Lahore.</p>
-      <div class="mn-mt-8" style="display:flex;gap:12px;flex-wrap:wrap">
-        <a class="mn-btn" href="shop.html">Shop the collection</a>
-        <a class="mn-btn mn-btn--outline" href="about.html">Read the story</a>
+      <div class="mn-hero__grid">
+
+        <div class="mn-hero__content">
+          <p class="mn-eyebrow">New - Signature Collection</p>
+          <h1 class="mn-display">Clothing for the way you actually live.</h1>
+          <p class="mn-lead">Editorial silhouettes. Elevated essentials. Cut from long-staple Pakistani cotton and finished quietly in Karachi.</p>
+          <div class="mn-hero__actions">
+            <a class="mn-btn" href="shop.html">Shop the collection</a>
+            <a class="mn-btn mn-btn--outline" href="about.html">Read the story</a>
+          </div>
+        </div>
+
+        <a class="mn-hero__media" href="shop.html" aria-label="Shop the Signature collection">
+          <img src="assets/img/hero-portrait.jpg" alt="MANIESTA LABEL - Atelier oversized drop shoulder" fetchpriority="high" width="2048" height="2048">
+          <p class="mn-hero__media-caption">Atelier Oversized Drop - Signature Line</p>
+        </a>
+
       </div>
     </div>
   </section>
@@ -254,9 +267,9 @@
         <img src="assets/img/atelier-oversized-drop-2.jpg" alt="" loading="lazy">
       </div>
       <div class="mn-editorial__content">
-        <p class="mn-editorial__eyebrow">Editorial — 01</p>
-        <h2 class="mn-editorial__title">Cotton from Faisalabad. Cut in Lahore.</h2>
-        <p class="mn-editorial__text">Pakistan grows some of the finest long-staple cotton in the world. We buy it directly from spinning mills in Faisalabad and cut each piece by hand in Lahore — small runs, considered construction, no shortcuts.</p>
+        <p class="mn-editorial__eyebrow">Editorial - 01</p>
+        <h2 class="mn-editorial__title">Cotton from Faisalabad. Cut in Karachi.</h2>
+        <p class="mn-editorial__text">Pakistan grows some of the finest long-staple cotton in the world. We buy it directly from spinning mills in Faisalabad and cut each piece by hand in Karachi - small runs, considered construction, no shortcuts.</p>
         <a class="mn-btn" href="about.html" style="background:var(--mn-bone);color:var(--mn-ink);border-color:var(--mn-bone);align-self:flex-start">Read the story</a>
       </div>
     </div>
@@ -290,7 +303,7 @@
       <p class="mn-eyebrow">The label</p>
       <h2 class="h2 mn-mt-4">Designed to be worn for years, not seasons.</h2>
       <p class="mn-lead mn-mt-8" style="margin-inline:auto">
-        MANIESTA LABEL is a premium contemporary fashion house based in Pakistan. We make a small, deliberate catalogue of pieces we want to wear ourselves — cut from fabrics that hold up, finished quietly, and priced without theatre.
+        MANIESTA LABEL is a premium contemporary fashion house based in Pakistan. We make a small, deliberate catalogue of pieces we want to wear ourselves - cut from fabrics that hold up, finished quietly, and priced without theatre.
       </p>
       <a class="mn-btn mn-btn--outline mn-mt-8" href="about.html">About MANIESTA</a>
     </div>
@@ -301,7 +314,7 @@
     <div class="mn-container" style="max-width:640px;text-align:center">
       <p class="mn-eyebrow">Newsletter</p>
       <h2 class="h2 mn-mt-4">First access. Quiet releases.</h2>
-      <p class="mn-lead mn-mt-8" style="margin-inline:auto">One email a month — new pieces, restocks, and editorial. No noise.</p>
+      <p class="mn-lead mn-mt-8" style="margin-inline:auto">One email a month - new pieces, restocks, and editorial. No noise.</p>
       <form class="mn-mt-8" data-newsletter-form style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
         <label class="mn-visually-hidden" for="nl-email">Email</label>
         <input id="nl-email" type="email" class="mn-field" placeholder="Your email" required style="max-width:320px">
@@ -354,10 +367,14 @@
 </footer>
 
 <script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/manieste-phase2.js" defer></script>
 <script src="assets/js/manieste-phase3.js" defer></script>
 <script src="assets/js/manieste-phase8.js" defer></script>
 <script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
 </body>
 </html>

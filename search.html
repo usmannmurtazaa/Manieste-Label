@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-PK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search — MANIESTA LABEL</title>
+<title>Search | MANIESTA LABEL</title>
 <meta name="description" content="Search the MANIESTA LABEL collection.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,9 @@
 <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/css/manieste.css">
 <link rel="stylesheet" href="assets/css/manieste-pages.css">
-<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/css/manieste.css" as="style">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -109,8 +111,8 @@
       <span class="mn-eyebrow" data-search-page-count>0 results</span>
       <select class="mn-select" aria-label="Sort results" data-search-page-sort>
         <option value="featured">Featured</option>
-        <option value="price-asc">Price — low to high</option>
-        <option value="price-desc">Price — high to low</option>
+        <option value="price-asc">Price - low to high</option>
+        <option value="price-desc">Price - high to low</option>
         <option value="newest">Newest</option>
       </select>
     </div>
@@ -129,10 +131,14 @@
 </footer>
 
 <script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/manieste-phase2.js" defer></script>
 <script src="assets/js/manieste-phase3.js" defer></script>
 <script src="assets/js/manieste-phase8.js" defer></script>
 <script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en-PK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order confirmed | MANIESTA LABEL</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/css/manieste.css">
+<link rel="stylesheet" href="assets/css/manieste-pages.css">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<a class="mn-skip" href="#main">Skip to content</a>
+
+<div class="mn-announce">Free delivery across Pakistan on orders over Rs. 5,000</div>
+
+<header class="mn-header">
+  <div class="mn-container mn-header__inner">
+    <nav class="mn-header__nav mn-header__nav--left" aria-label="Primary">
+      <a class="mn-header__link" href="shop.html">Shop</a>
+    </nav>
+    <a class="mn-logo" href="index.html">MANIESTA</a>
+    <div class="mn-header__nav mn-header__nav--right">
+      <a class="mn-icon-btn" href="account.html" aria-label="Account"><i class="far fa-user"></i></a>
+      <a class="mn-icon-btn" href="wishlist.html" aria-label="Wishlist"><i class="far fa-heart"></i></a>
+      <a class="mn-icon-btn" href="cart.html" aria-label="Bag"><i class="fas fa-shopping-bag"></i></a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="mn-section">
+  <div class="mn-container" data-order-root>
+    <div class="mn-loading-block"><span class="mn-spinner"></span><p>Loading order…</p></div>
+  </div>
+</main>
+
+<footer class="mn-footer">
+  <div class="mn-container">
+    <div class="mn-footer__bottom" style="border-top:0">
+      <span>© <span data-year></span> MANIESTA LABEL. All rights reserved.</span>
+      <span>Designed and developed by <a href="https://usmanmurtaza.netlify.app" rel="author noopener" target="_blank" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Usman Murtaza</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
+
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
+<script type="module" src="./assets/js/firebase/orders.js"></script>
+<script type="module" src="./assets/js/firebase/order-confirmation.js"></script>
+</body>
+</html>

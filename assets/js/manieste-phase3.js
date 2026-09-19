@@ -100,7 +100,7 @@ const Account = {
       f.addEventListener('submit', function(e) {
         e.preventDefault();
         if (!f.checkValidity()) { f.reportValidity(); return; }
-        Toast.show('Demo — no account system connected yet.');
+        Toast.show('Demo - no account system connected yet.');
         f.reset();
       });
     });

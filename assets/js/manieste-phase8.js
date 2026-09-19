@@ -1,7 +1,7 @@
 'use strict';
 
 /* ==========================================================================
-   MANIESTA LABEL — Phase 8
+   MANIESTA LABEL - Phase 8
    Screen reader announcements, image perf helpers, prefetch on intent
    ========================================================================== */
 
@@ -29,7 +29,7 @@ const Live = {
 document.addEventListener('mn:cart-changed', () => {
   if (typeof Cart === 'undefined') return;
   const n = Cart.count();
-  Live.say(n === 0 ? 'Bag is empty' : 'Bag updated — ' + n + (n === 1 ? ' item' : ' items'));
+  Live.say(n === 0 ? 'Bag is empty' : 'Bag updated - ' + n + (n === 1 ? ' item' : ' items'));
 });
 
 /* --- Announce wishlist changes --- */

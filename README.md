@@ -9,7 +9,7 @@
 [![PWA](https://img.shields.io/badge/PWA-installable-B8896A?style=for-the-badge)](#progressive-web-app)
 [![Made in Pakistan](https://img.shields.io/badge/made%20in-Pakistan-1F6F43?style=for-the-badge)](https://en.wikipedia.org/wiki/Pakistan)
 
-A static ecommerce storefront for **MANIESTA LABEL** — a premium contemporary fashion house based in Pakistan. Built with vanilla HTML, CSS, and JavaScript. No build step, no framework, no backend.
+A static ecommerce storefront for **MANIESTA LABEL** - a premium contemporary fashion house based in Pakistan. Built with vanilla HTML, CSS, and JavaScript. No build step, no framework, no backend.
 
 [Live Site](https://manieste.netlify.app) · [Report Bug](../../issues) · [Request Feature](../../issues)
 
@@ -19,7 +19,7 @@ A static ecommerce storefront for **MANIESTA LABEL** — a premium contemporary 
 
 ## Overview
 
-MANIESTA LABEL is a design-first storefront for a small, deliberate catalogue of premium essentials — drop shoulders, overshirts, hoodies, and studio sets. This repository contains the full frontend: homepage, collection listing, product detail, cart, wishlist, search, account shell, editorial pages, and legal pages.
+MANIESTA LABEL is a design-first storefront for a small, deliberate catalogue of premium essentials - drop shoulders, overshirts, hoodies, and studio sets. This repository contains the full frontend: homepage, collection listing, product detail, cart, wishlist, search, account shell, editorial pages, and legal pages.
 
 The site is intentionally framework-free. It ships as static files, deploys anywhere in seconds, and runs entirely client-side. Cart and wishlist state persist through `localStorage`; checkout is a demo placeholder.
 
@@ -42,13 +42,13 @@ The site is intentionally framework-free. It ships as static files, deploys anyw
 ## Features
 
 ### Storefront
-- **Editorial homepage** — hero, featured, category grid, editorial block, new arrivals, best sellers, brand story
+- **Editorial homepage** - hero, featured, category grid, editorial block, new arrivals, best sellers, brand story
 - **Collection listing** with filter drawer, active filter chips, sort, density toggle, and load-more
 - **Product detail** with image gallery, zoom on hover, variant picker, size guide, trust row, recently viewed
-- **Deep-linked filters** — `?cat=T-Shirts&col=Atelier&sort=price-asc` restores full state
-- **Search overlay** — `Ctrl+K` shortcut, instant results, dedicated results page
-- **Cart drawer** — slide-in, focus-trapped, live subtotal
-- **Wishlist** — persistent, viewable, removable
+- **Deep-linked filters** - `?cat=T-Shirts&col=Atelier&sort=price-asc` restores full state
+- **Search overlay** - `Ctrl+K` shortcut, instant results, dedicated results page
+- **Cart drawer** - slide-in, focus-trapped, live subtotal
+- **Wishlist** - persistent, viewable, removable
 
 ### Product Experience
 - Multiple images per product with cross-fade hover
@@ -101,7 +101,7 @@ The site is intentionally framework-free. It ships as static files, deploys anyw
 | Layer | Technology |
 |---|---|
 | Markup | HTML5 (semantic) |
-| Styles | CSS3 — custom design system in `assets/css/manieste.css` |
+| Styles | CSS3 - custom design system in `assets/css/manieste.css` |
 | Behaviour | Vanilla JavaScript (ES5-compatible, no build) |
 | Icons | Font Awesome 5.15.1 (CC BY 4.0 / SIL OFL 1.1 / MIT) |
 | Grid utilities | Bootstrap 5.0.0-beta1 (grid + utilities only, MIT) |
@@ -171,9 +171,9 @@ manieste-label/
 
 ## Local Development
 
-The site is static — you only need a local HTTP server. The browser's `file://` protocol blocks `fetch()` for `products.json`, so don't just double-click `index.html`.
+The site is static - you only need a local HTTP server. The browser's `file://` protocol blocks `fetch()` for `products.json`, so don't just double-click `index.html`.
 
-### Option A — Python (built into most systems)
+### Option A - Python (built into most systems)
 
 ```bash
 # Python 3
@@ -183,13 +183,13 @@ python -m http.server 8000
 python -m SimpleHTTPServer 8000
 ```
 
-### Option B — Node (`npx`)
+### Option B - Node (`npx`)
 
 ```bash
 npx serve .
 ```
 
-### Option C — VS Code Live Server
+### Option C - VS Code Live Server
 
 Install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**.
 
@@ -221,10 +221,10 @@ Any push to `main` triggers a fresh deploy in ~20 seconds.
 
 The site works on any static host:
 
-- **Vercel** — zero config, add a `vercel.json` if you want clean URLs
-- **Cloudflare Pages** — same idea, free tier
-- **GitHub Pages** — Settings → Pages → deploy from `main` branch root
-- **Any nginx / Apache server** — just upload the files
+- **Vercel** - zero config, add a `vercel.json` if you want clean URLs
+- **Cloudflare Pages** - same idea, free tier
+- **GitHub Pages** - Settings → Pages → deploy from `main` branch root
+- **Any nginx / Apache server** - just upload the files
 
 ---
 
@@ -298,12 +298,12 @@ Replace with your own pairing, then update `--mn-font-display` and `--mn-font-bo
 
 This is a **frontend-only** storefront. The following are intentionally absent and need a backend to go live as a real shop:
 
-- **Payment processing** — checkout is a demo placeholder. Integrate Stripe, Razorpay, or a local Pakistani gateway (JazzCash, Easypaisa, Safepay).
-- **User authentication** — `account.html` is a UI shell. Sign-in / register / orders / addresses do not persist.
-- **Inventory management** — `inStock` in `products.json` is a static boolean.
-- **Order management** — no database, no admin panel.
-- **Server-side search** — search runs entirely in the browser against the loaded catalogue.
-- **Email** — newsletter and contact forms validate client-side but send nothing.
+- **Payment processing** - checkout is a demo placeholder. Integrate Stripe, Razorpay, or a local Pakistani gateway (JazzCash, Easypaisa, Safepay).
+- **User authentication** - `account.html` is a UI shell. Sign-in / register / orders / addresses do not persist.
+- **Inventory management** - `inStock` in `products.json` is a static boolean.
+- **Order management** - no database, no admin panel.
+- **Server-side search** - search runs entirely in the browser against the loaded catalogue.
+- **Email** - newsletter and contact forms validate client-side but send nothing.
 
 These are integration points, not bugs.
 
@@ -352,7 +352,7 @@ The frontend structure was originally derived from a third-party ecommerce templ
 
 This repository contains proprietary work. Do not redistribute, sublicense, or deploy without written permission from the owner.
 
-Third-party libraries retain their original licenses (MIT, CC BY 4.0, SIL OFL 1.1, BSD-2-Clause) — see `CREDITS.md` for details.
+Third-party libraries retain their original licenses (MIT, CC BY 4.0, SIL OFL 1.1, BSD-2-Clause) - see `CREDITS.md` for details.
 
 ---
 

@@ -1,7 +1,7 @@
 'use strict';
 
 /* ==========================================================================
-   MANIESTA LABEL — Responsive pass
+   MANIESTA LABEL - Responsive pass
    Overrides ProductCard.render to reposition quick-add inside media
    Ensures card layout doesn't break when product names wrap
    ========================================================================== */

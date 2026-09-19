@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-PK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Account — MANIESTA LABEL</title>
+<title>Account | MANIESTA LABEL</title>
 <meta name="description" content="Sign in to your MANIESTA LABEL account.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,9 @@
 <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/css/manieste.css">
 <link rel="stylesheet" href="assets/css/manieste-pages.css">
-<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/css/manieste.css" as="style">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -113,21 +115,41 @@
       </nav>
 
       <div>
+
+        <!-- Sign in -->
         <section class="mn-account-card" data-account-panel="signin">
           <h2 class="h3">Sign in</h2>
-          <p class="mn-small mn-muted mn-mt-4">Frontend UI only — no authentication is connected.</p>
+          <p class="mn-small mn-muted mn-mt-4">Welcome back. Sign in to track orders and save your bag across devices.</p>
+
           <form class="mn-mt-8" data-account-form="signin" novalidate>
             <label class="mn-label" for="si-email">Email</label>
-            <input id="si-email" type="email" class="mn-field mn-mb-6" required autocomplete="email">
-            <label class="mn-label" for="si-pass">Password</label>
-            <input id="si-pass" type="password" class="mn-field" required autocomplete="current-password">
+            <input id="si-email" type="email" class="mn-field" required autocomplete="email" placeholder="you@example.com">
+
+            <label class="mn-label mn-mt-6" for="si-pass">Password</label>
+            <input id="si-pass" type="password" class="mn-field" required autocomplete="current-password" placeholder="Your password">
+
+            <div class="mn-row mn-row--between mn-mt-4">
+              <span></span>
+              <button type="button" data-forgot-password style="background:none;border:0;padding:0;cursor:pointer;color:var(--mn-stone);text-decoration:underline;text-underline-offset:3px;font-size:12px">Forgot password?</button>
+            </div>
+
             <button class="mn-btn mn-btn--block mn-mt-8" type="submit">Sign in</button>
           </form>
+
+          <div class="mn-row mn-mt-8" style="justify-content:center">
+            <span class="mn-small mn-muted">or continue with</span>
+          </div>
+
+          <button type="button" class="mn-btn mn-btn--outline mn-btn--block mn-mt-4" data-google-signin>
+            <i class="fab fa-google" style="margin-right:8px"></i>Google
+          </button>
         </section>
 
+        <!-- Register -->
         <section class="mn-account-card" data-account-panel="register" hidden>
           <h2 class="h3">Create account</h2>
-          <p class="mn-small mn-muted mn-mt-4">Frontend UI only — no authentication is connected.</p>
+          <p class="mn-small mn-muted mn-mt-4">Save your bag, track orders, and check out faster.</p>
+
           <form class="mn-mt-8" data-account-form="register" novalidate>
             <div class="mn-form-grid">
               <div>
@@ -139,23 +161,35 @@
                 <input id="re-last" type="text" class="mn-field" required autocomplete="family-name">
               </div>
             </div>
+
             <label class="mn-label mn-mt-6" for="re-email">Email</label>
-            <input id="re-email" type="email" class="mn-field mn-mb-6" required autocomplete="email">
-            <label class="mn-label" for="re-pass">Password</label>
-            <input id="re-pass" type="password" class="mn-field" required autocomplete="new-password">
+            <input id="re-email" type="email" class="mn-field" required autocomplete="email" placeholder="you@example.com">
+
+            <label class="mn-label mn-mt-6" for="re-pass">Password</label>
+            <input id="re-pass" type="password" class="mn-field" required autocomplete="new-password" placeholder="At least 6 characters">
+            <p class="mn-small mn-muted mn-mt-2">Minimum 6 characters.</p>
+
             <button class="mn-btn mn-btn--block mn-mt-8" type="submit">Create account</button>
           </form>
-        </section>
 
-        <section class="mn-account-card" data-account-panel="orders" hidden>
-          <h2 class="h3">Orders</h2>
-          <div class="mn-empty" style="padding:48px 0">
-            <p class="mn-empty__title">No orders yet</p>
-            <p class="mn-empty__text">When you place an order it will appear here.</p>
-            <a class="mn-btn" href="shop.html">Start shopping</a>
+          <div class="mn-row mn-mt-8" style="justify-content:center">
+            <span class="mn-small mn-muted">or continue with</span>
           </div>
+
+          <button type="button" class="mn-btn mn-btn--outline mn-btn--block mn-mt-4" data-google-signin>
+            <i class="fab fa-google" style="margin-right:8px"></i>Google
+          </button>
         </section>
 
+        <!-- Orders -->
+        <section class="mn-account-card" data-account-panel="orders" hidden>
+  <h2 class="h3">Orders</h2>
+  <div data-account-orders style="margin-top:24px">
+    <div class="mn-loading-block"><span class="mn-spinner"></span></div>
+  </div>
+</section>
+
+        <!-- Addresses -->
         <section class="mn-account-card" data-account-panel="addresses" hidden>
           <h2 class="h3">Addresses</h2>
           <div class="mn-empty" style="padding:48px 0">
@@ -163,6 +197,7 @@
             <p class="mn-empty__text">Save an address at checkout for faster ordering.</p>
           </div>
         </section>
+
       </div>
     </div>
   </div>
@@ -178,10 +213,74 @@
 </footer>
 
 <script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/manieste-phase2.js" defer></script>
 <script src="assets/js/manieste-phase3.js" defer></script>
 <script src="assets/js/manieste-phase8.js" defer></script>
 <script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
+
+<script type="module">
+  import { initAuthUI } from './assets/js/firebase/auth-ui.js';
+  initAuthUI().catch(err => console.error('[MANIESTA] Auth init failed:', err));
+</script>
+
+<script type="module">
+  import { Auth } from './assets/js/firebase/auth.js';
+
+  const root = document.querySelector('[data-account-orders]');
+  if (root) {
+    let waited = 0;
+    while (!window.MN_Orders && waited < 1500) {
+      await new Promise(r => setTimeout(r, 40));
+      waited += 40;
+    }
+
+    async function loadOrders() {
+      const user = await Auth.getCurrentUser();
+      if (!user) {
+        root.innerHTML = '<div class="mn-empty" style="padding:32px 0"><p class="mn-empty__title">Sign in to see orders</p></div>';
+        return;
+      }
+      const { orders, error } = await window.MN_Orders.list(user.uid);
+      if (error) {
+        root.innerHTML = '<div class="mn-error mn-error--plain"><p class="mn-error__title">Could not load orders</p><p class="mn-error__text">' + error + '</p></div>';
+        return;
+      }
+      if (!orders.length) {
+        root.innerHTML = '<div class="mn-empty" style="padding:32px 0"><p class="mn-empty__title">No orders yet</p><p class="mn-empty__text">When you place an order it will appear here.</p><a class="mn-btn" href="shop.html">Start shopping</a></div>';
+        return;
+      }
+      root.innerHTML = '<div class="mn-orders-list">' + orders.map(o =>
+        '<div class="mn-order-row">' +
+          '<div class="mn-order-row__header">' +
+            '<div>' +
+              '<p class="mn-order-row__id">#' + o.id + '</p>' +
+              '<p class="mn-order-row__meta" style="margin-top:4px">' + new Date(o.createdAt).toLocaleDateString('en-PK', { year: 'numeric', month: 'long', day: 'numeric' }) + '</p>' +
+            '</div>' +
+            '<div style="text-align:right">' +
+              '<span class="mn-order-row__status" data-status="' + (o.status || 'pending') + '">' + (o.status || 'pending') + '</span>' +
+              '<p class="mn-order-row__total" style="margin-top:8px">Rs. ' + (o.total || 0).toLocaleString('en-PK') + '</p>' +
+            '</div>' +
+          '</div>' +
+          '<p class="mn-order-row__items">' + (o.items || []).length + ' item' + ((o.items || []).length === 1 ? '' : 's') + '</p>' +
+          '<a href="order-confirmation.html?order=' + o.id + '" class="mn-small mn-link" style="margin-top:12px;display:inline-block">View details →</a>' +
+        '</div>'
+      ).join('') + '</div>';
+    }
+
+    // Load when orders tab is activated
+    document.addEventListener('click', (e) => {
+      const tab = e.target.closest('[data-account-tab="orders"]');
+      if (tab) setTimeout(loadOrders, 50);
+    });
+
+    // Load on initial hash
+    if (location.hash === '#orders') setTimeout(loadOrders, 200);
+  }
+</script>
 </body>
 </html>

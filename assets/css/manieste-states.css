@@ -1,0 +1,256 @@
+﻿/* ==========================================================================
+   MANIESTA LABEL — Loading, Empty, Error states
+   Phase 2
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SKELETON PRIMITIVES
+   (base .mn-skeleton already exists in manieste.css — extending)
+   -------------------------------------------------------------------------- */
+.mn-skeleton--circle {
+  border-radius: 50%;
+}
+.mn-skeleton--line {
+  height: 12px;
+  border-radius: 0;
+}
+.mn-skeleton--line--sm  { height: 8px;  width: 40%; }
+.mn-skeleton--line--md  { height: 12px; width: 70%; }
+.mn-skeleton--line--lg  { height: 12px; width: 100%; }
+
+/* Card skeleton — mirrors .mn-product-card layout */
+.mn-skeleton-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--mn-hairline);
+  background: var(--mn-chalk);
+}
+.mn-skeleton-card__media {
+  aspect-ratio: 3 / 4;
+  background: var(--mn-hairline);
+  position: relative;
+  overflow: hidden;
+}
+.mn-skeleton-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  animation: mn-shimmer 1.4s infinite;
+}
+.mn-skeleton-card__body {
+  padding: var(--mn-space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Line skeleton — generic single-line placeholder */
+.mn-skeleton-line {
+  height: 12px;
+  background: var(--mn-hairline);
+  position: relative;
+  overflow: hidden;
+}
+.mn-skeleton-line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+  animation: mn-shimmer 1.4s infinite;
+}
+.mn-skeleton-line--40 { width: 40%; }
+.mn-skeleton-line--60 { width: 60%; }
+.mn-skeleton-line--80 { width: 80%; }
+
+/* --------------------------------------------------------------------------
+   2. LOADING CONTAINER — wraps skeleton grids
+   -------------------------------------------------------------------------- */
+.mn-loading {
+  display: block;
+  position: relative;
+}
+.mn-loading[hidden] { display: none !important; }
+
+/* Inline loading indicator — spinner + text */
+.mn-loading-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mn-stone);
+}
+.mn-loading-inline .mn-spinner {
+  width: 14px;
+  height: 14px;
+  border-width: 1.5px;
+}
+
+/* Full-block loader — centered */
+.mn-loading-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 24px;
+  text-align: center;
+  color: var(--mn-stone);
+}
+.mn-loading-block .mn-spinner {
+  width: 28px;
+  height: 28px;
+  border-width: 2px;
+}
+.mn-loading-block p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   3. EMPTY STATE — formalized (mn-empty exists, adding variants)
+   -------------------------------------------------------------------------- */
+.mn-empty--bordered {
+  border: 1px solid var(--mn-hairline);
+  background: var(--mn-chalk);
+}
+.mn-empty__icon i {
+  font-size: 32px;
+  color: var(--mn-stone);
+}
+.mn-empty__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--mn-space-6);
+}
+
+/* Empty inline — for drawers and small blocks */
+.mn-empty-inline {
+  padding: 32px 16px;
+  text-align: center;
+}
+.mn-empty-inline__title {
+  font-family: var(--mn-font-display);
+  font-size: 1.25rem;
+  margin: 0 0 6px;
+  color: var(--mn-ink);
+}
+.mn-empty-inline__text {
+  font-size: 13px;
+  color: var(--mn-stone);
+  margin: 0 0 20px;
+  max-width: 36ch;
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   4. ERROR STATE
+   -------------------------------------------------------------------------- */
+.mn-error {
+  padding: 40px 24px;
+  text-align: center;
+  border: 1px solid var(--mn-hairline);
+  background: var(--mn-chalk);
+}
+.mn-error--plain {
+  border: 0;
+  background: transparent;
+  padding: 32px 16px;
+}
+.mn-error__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FBF6F1;
+  color: var(--mn-clay);
+  font-size: 20px;
+  margin-bottom: var(--mn-space-4);
+}
+.mn-error__title {
+  font-family: var(--mn-font-display);
+  font-size: 1.375rem;
+  margin: 0 0 8px;
+  color: var(--mn-ink);
+}
+.mn-error__text {
+  font-size: 14px;
+  color: var(--mn-graphite);
+  max-width: 42ch;
+  margin: 0 auto var(--mn-space-6);
+  line-height: 1.6;
+}
+.mn-error__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mn-error__retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.mn-error__retry i {
+  transition: transform var(--mn-dur-base, 280ms) var(--mn-ease-out, ease);
+}
+.mn-error__retry:hover i {
+  transform: rotate(90deg);
+}
+
+/* Drawer-specific error (compact) */
+.mn-drawer .mn-error {
+  padding: 32px 16px;
+  border: 0;
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   5. INLINE FIELD ERROR (for forms)
+   -------------------------------------------------------------------------- */
+.mn-field-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--mn-error);
+}
+.mn-field.is-invalid {
+  border-bottom-color: var(--mn-error);
+}
+
+/* --------------------------------------------------------------------------
+   6. FADE-IN for loaded content
+   -------------------------------------------------------------------------- */
+@keyframes mn-content-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.mn-loaded {
+  animation: mn-content-in var(--mn-dur-base, 280ms) var(--mn-ease-out, ease) both;
+}
+
+/* --------------------------------------------------------------------------
+   7. REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .mn-skeleton::after,
+  .mn-skeleton-line::after,
+  .mn-skeleton-card__media::after {
+    animation: none !important;
+    background: none !important;
+  }
+  .mn-loaded {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

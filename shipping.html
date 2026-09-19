@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-PK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Shipping — MANIESTA LABEL</title>
+<title>Shipping | MANIESTA LABEL</title>
 <meta name="description" content="Shipping information, delivery times, costs, and tracking for MANIESTA LABEL orders across Pakistan.">
 <link rel="canonical" href="https://manieste.example/shipping.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MANIESTA LABEL">
-<meta property="og:title" content="Shipping — MANIESTA LABEL">
+<meta property="og:title" content="Shipping | MANIESTA LABEL">
 <meta property="og:description" content="Shipping information, delivery times, costs, and tracking for MANIESTA LABEL orders across Pakistan.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,9 @@
 <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/css/manieste.css">
 <link rel="stylesheet" href="assets/css/manieste-pages.css">
-<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/css/manieste.css" as="style">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -138,7 +140,7 @@
 <p>We do not deliver to PO boxes. If you're in a remote area where couriers don't have street-level coverage, enter your nearest pickup point at checkout and we'll arrange delivery there.</p>
 
 <h2 id="times">Delivery times</h2>
-<p>Orders are dispatched from our Lahore studio within 1–2 business days. Delivery time from dispatch depends on your city:</p>
+<p>Orders are dispatched from our Karachi studio within 1–2 business days. Delivery time from dispatch depends on your city:</p>
 <table>
   <thead><tr><th>City</th><th>Standard delivery</th><th>Express delivery</th></tr></thead>
   <tbody>
@@ -161,11 +163,11 @@
 </ul>
 
 <h2 id="cod">Cash on delivery</h2>
-<p>We accept cash on delivery for orders up to <strong>Rs. 20,000</strong>. The courier will collect payment when the order is delivered. Please have exact change ready — riders don't always carry change for large notes.</p>
+<p>We accept cash on delivery for orders up to <strong>Rs. 20,000</strong>. The courier will collect payment when the order is delivered. Please have exact change ready - riders don't always carry change for large notes.</p>
 <p>COD is not available for orders that include international shipping or for repeat customers with a history of refused deliveries.</p>
 
 <h2 id="tracking">Tracking</h2>
-<p>Every order gets a tracking number as soon as it leaves our studio. You'll receive it by email and SMS. Tracking information typically updates within 24 hours of dispatch — if you don't see movement after two days, reach out to <a href="mailto:care@manieste.example">care@manieste.example</a> and we'll chase it for you.</p>
+<p>Every order gets a tracking number as soon as it leaves our studio. You'll receive it by email and SMS. Tracking information typically updates within 24 hours of dispatch - if you don't see movement after two days, reach out to <a href="mailto:care@manieste.example">care@manieste.example</a> and we'll chase it for you.</p>
 
 <h2 id="international">International shipping</h2>
 <p>International shipping is not yet automated on the site. If you're outside Pakistan and want to order, email <a href="mailto:care@manieste.example">care@manieste.example</a> with the pieces you'd like and your delivery address. We'll send you a custom quote for shipping and any applicable duties within one business day.</p>
@@ -175,7 +177,7 @@
 <p>If your order hasn't arrived within the estimated window:</p>
 <ol>
   <li>Check the tracking link sent to your email.</li>
-  <li>Contact the courier directly using the tracking number — sometimes a delivery attempt was made when you weren't home.</li>
+  <li>Contact the courier directly using the tracking number - sometimes a delivery attempt was made when you weren't home.</li>
   <li>If the courier can't locate the parcel after 48 hours, email us at <a href="mailto:care@manieste.example">care@manieste.example</a> with your order number.</li>
 </ol>
 <p>Lost parcels are replaced or refunded in full at our discretion, once the courier has confirmed the loss. This typically takes 5–7 business days from the date of the report.</p></div>
@@ -228,6 +230,8 @@
 </footer>
 
 <script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/manieste-phase2.js" defer></script>
 <script src="assets/js/manieste-phase3.js" defer></script>
@@ -235,5 +239,7 @@
 <script src="assets/js/manieste-phase5.js" defer></script>
 <script src="assets/js/manieste-phase8.js" defer></script>
 <script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
 </body>
 </html>

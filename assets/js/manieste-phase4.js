@@ -1,7 +1,7 @@
 'use strict';
 
 /* ==========================================================================
-   MANIESTA LABEL — Phase 4
+   MANIESTA LABEL - Phase 4
    PDP: zoom, JSON-LD, breadcrumb, trust row, recently viewed
    Overrides ProductDetail.mount from main.js
    ========================================================================== */
@@ -65,7 +65,7 @@ const ProductSchema = {
     };
 
     /* NOTE: aggregateRating is intentionally omitted.
-       Inject it only after collecting real customer reviews —
+       Inject it only after collecting real customer reviews -
        Google penalises fabricated review markup. */
 
     const script = document.createElement('script');
@@ -110,11 +110,11 @@ const ImageZoom = {
 
 /* ---------- New PDP mount (overrides main.js) ---------- */
 ProductDetail.mount = function(p) {
-  document.title = p.name + ' — MANIESTA LABEL';
+  document.title = p.name + ' - MANIESTA LABEL';
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute('content', p.shortDesc);
   const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.setAttribute('content', p.name + ' — MANIESTA LABEL');
+  if (ogTitle) ogTitle.setAttribute('content', p.name + ' - MANIESTA LABEL');
   const ogDesc = document.querySelector('meta[property="og:description"]');
   if (ogDesc) ogDesc.setAttribute('content', p.shortDesc);
   const ogImg = document.querySelector('meta[property="og:image"]');
@@ -185,7 +185,7 @@ ProductDetail.mount = function(p) {
         '<p class="mn-lead mn-mt-8">' + escapeHtml(p.description) + '</p>' +
 
         '<div class="mn-pd__field mn-mt-8">' +
-          '<span class="mn-label">Colour — <span data-selected-color>' + escapeHtml(p.colors[0].name) + '</span></span>' +
+          '<span class="mn-label">Colour - <span data-selected-color>' + escapeHtml(p.colors[0].name) + '</span></span>' +
           '<div class="mn-pd__colors">' + swatchColors + '</div>' +
         '</div>' +
 

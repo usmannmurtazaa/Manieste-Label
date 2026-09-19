@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-PK">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — MANIESTA LABEL</title>
-<meta name="description" content="MANIESTA LABEL privacy policy — what data we collect, how we use it, and your rights.">
+<title>Privacy Policy - MANIESTA LABEL</title>
+<meta name="description" content="MANIESTA LABEL privacy policy - what data we collect, how we use it, and your rights.">
 <link rel="canonical" href="https://manieste.example/privacy.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MANIESTA LABEL">
-<meta property="og:title" content="Privacy Policy — MANIESTA LABEL">
-<meta property="og:description" content="MANIESTA LABEL privacy policy — what data we collect, how we use it, and your rights.">
+<meta property="og:title" content="Privacy Policy - MANIESTA LABEL">
+<meta property="og:description" content="MANIESTA LABEL privacy policy - what data we collect, how we use it, and your rights.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap">
@@ -17,7 +17,9 @@
 <link rel="stylesheet" href="assets/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/css/manieste.css">
 <link rel="stylesheet" href="assets/css/manieste-pages.css">
-<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="assets/css/manieste-animations.css">
+<link rel="stylesheet" href="assets/css/manieste-states.css">
+<link rel="icon" href="assets/img/favicon.jpg" type="image/x-icon">
 <link rel="manifest" href="manifest.json">
 <link rel="preload" href="assets/css/manieste.css" as="style">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -116,7 +118,7 @@
     <div class="mn-container">
       <p class="mn-eyebrow">Legal</p>
       <h1 class="h1 mn-mt-4" style="max-width:20ch">Privacy policy</h1>
-      <p class="mn-lead mn-mt-6" style="max-width:60ch">How we handle your data — plainly stated, without legalese where we can avoid it.</p>
+      <p class="mn-lead mn-mt-6" style="max-width:60ch">How we handle your data - plainly stated, without legalese where we can avoid it.</p>
     </div>
   </section>
 
@@ -151,10 +153,10 @@
 <h2 id="cookies">Cookies and local storage</h2>
 <p>We use browser <strong>localStorage</strong> for essential functionality:</p>
 <ul>
-  <li><code>manieste.cart.v1</code> — the items in your bag</li>
-  <li><code>manieste.wishlist.v1</code> — the pieces you've saved</li>
-  <li><code>manieste.recently-viewed</code> — the products you've looked at recently</li>
-  <li><code>manieste.shop.density</code> — your preferred grid layout in the shop</li>
+  <li><code>manieste.cart.v1</code> - the items in your bag</li>
+  <li><code>manieste.wishlist.v1</code> - the pieces you've saved</li>
+  <li><code>manieste.recently-viewed</code> - the products you've looked at recently</li>
+  <li><code>manieste.shop.density</code> - your preferred grid layout in the shop</li>
 </ul>
 <p>These are stored on your device only. They are not transmitted to us or any third party. You can clear them at any time through your browser settings.</p>
 <p>We do not currently use analytics, advertising, or tracking cookies on this site.</p>
@@ -162,9 +164,9 @@
 <h2 id="third-parties">Third parties we work with</h2>
 <p>The following third-party services are loaded when you visit our site:</p>
 <ul>
-  <li><strong>Google Fonts</strong> — serves the Cormorant Garamond and Inter typefaces. Google may log your IP address when fonts are requested. See <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google's privacy policy</a>.</li>
-  <li><strong>Payment processor</strong> — handles card payments at checkout. Details are provided at the time of payment.</li>
-  <li><strong>Courier partners</strong> — receive your name, phone number, and shipping address to deliver your order.</li>
+  <li><strong>Google Fonts</strong> - serves the Cormorant Garamond and Inter typefaces. Google may log your IP address when fonts are requested. See <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Google's privacy policy</a>.</li>
+  <li><strong>Payment processor</strong> - handles card payments at checkout. Details are provided at the time of payment.</li>
+  <li><strong>Courier partners</strong> - receive your name, phone number, and shipping address to deliver your order.</li>
 </ul>
 
 <h2 id="use">How we use your data</h2>
@@ -172,7 +174,7 @@
   <li>To process and deliver your orders</li>
   <li>To send order confirmations, shipping updates, and receipts</li>
   <li>To respond to your customer service inquiries</li>
-  <li>To send marketing emails — only if you've opted in. Every email has an unsubscribe link.</li>
+  <li>To send marketing emails - only if you've opted in. Every email has an unsubscribe link.</li>
   <li>To prevent fraud and comply with legal obligations</li>
 </ul>
 
@@ -249,6 +251,8 @@
 </footer>
 
 <script>document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());</script>
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/manieste-phase2.js" defer></script>
 <script src="assets/js/manieste-phase3.js" defer></script>
@@ -256,5 +260,7 @@
 <script src="assets/js/manieste-phase5.js" defer></script>
 <script src="assets/js/manieste-phase8.js" defer></script>
 <script src="assets/js/manieste-responsive.js" defer></script>
+<script src="assets/js/manieste-animations.js" defer></script>
+<script src="assets/js/manieste-states.js" defer></script>
 </body>
 </html>
