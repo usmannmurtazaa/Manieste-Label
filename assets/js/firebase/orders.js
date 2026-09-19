@@ -27,7 +27,7 @@ const Orders = {
         updatedAt: serverTimestamp()
       });
 
-      // Strip undefined values
+      // Strip undefined values — Firestore rejects them
       Object.keys(payload).forEach(k => {
         if (payload[k] === undefined) delete payload[k];
       });
@@ -38,7 +38,10 @@ const Orders = {
       try {
         localStorage.setItem(LOCAL_KEY, JSON.stringify({
           id: ref.id,
-          order: Object.assign({}, orderData, { status: 'pending', createdAt: new Date().toISOString() })
+          order: Object.assign({}, orderData, {
+            status: 'pending',
+            createdAt: new Date().toISOString()
+          })
         }));
       } catch {}
 
@@ -51,17 +54,21 @@ const Orders = {
 
   /* ---------- Get one (for confirmation page) ---------- */
   async get(orderId) {
-    // 1. Try local cache
+    // 1. Local cache first — authoritative right after checkout
     let local = null;
     try {
       const raw = localStorage.getItem(LOCAL_KEY);
       if (raw) {
         const cached = JSON.parse(raw);
-        if (cached && cached.id === orderId) local = cached.order;
+        if (cached && cached.id === orderId) {
+          local = cached.order;
+          // Fresh local copy — skip Firestore entirely
+          return { order: local, source: 'local' };
+        }
       }
     } catch {}
 
-    // 2. Try Firestore if signed in
+    // 2. Firestore (only if local cache is empty/missing)
     try {
       if (FEATURES.FIRESTORE) {
         const db = await getDb();
@@ -70,7 +77,7 @@ const Orders = {
           const snap = await getDoc(doc(db, 'orders', orderId));
           if (snap.exists()) {
             const data = snap.data();
-            // Convert timestamp to ISO string for consistent rendering
+            // Convert Firestore timestamp → ISO string for consistent rendering
             if (data.createdAt && typeof data.createdAt.toDate === 'function') {
               data.createdAt = data.createdAt.toDate().toISOString();
             }
@@ -79,11 +86,10 @@ const Orders = {
         }
       }
     } catch (err) {
-      console.warn('[Orders] get from Firestore failed:', err.message);
+      // Silent — normal when user isn't the order owner. Falls through.
     }
 
-    // 3. Local fallback
-    if (local) return { order: local, source: 'local' };
+    // 3. Nothing available
     return { order: null, source: 'none' };
   },
 
