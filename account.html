@@ -225,6 +225,14 @@
 
 <script type="module">
   import { initAuthUI } from './assets/js/firebase/auth-ui.js';
+  initAuthUI();
+</script>
+
+<script type="module" src="./assets/js/firebase/products.js"></script>
+<script type="module" src="./assets/js/firebase/cart-sync.js"></script>
+<script type="module" src="./assets/js/firebase/orders.js"></script>
+<script type="module">
+  import { initAuthUI } from './assets/js/firebase/auth-ui.js';
   initAuthUI().catch(err => console.error('[MANIESTA] Auth init failed:', err));
 </script>
 

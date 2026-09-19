@@ -110,8 +110,18 @@ const Cart = {
         </aside>
       </div>`;
   },
-  bind() {
+      bind() {
     document.addEventListener('click', (e) => {
+      // Checkout can be clicked anywhere (not inside a cart row)
+      if (e.target.matches('[data-checkout]')) {
+        if (this.count() === 0) {
+          Toast.show('Your bag is empty');
+        } else {
+          window.location.href = 'checkout.html';
+        }
+        return;
+      }
+
       const item = e.target.closest('.mn-cart-item');
       if (!item) return;
       const key = item.dataset.key;
@@ -123,12 +133,6 @@ const Cart = {
         if (cur) this.update(key, cur.qty - 1);
       } else if (e.target.matches('[data-cart-remove]')) {
         this.remove(key);
-      } else if (e.target.matches('[data-checkout]')) {
-        if (this.count() === 0) {
-          Toast.show('Your bag is empty');
-        } else {
-          window.location.href = 'checkout.html';
-        }
       }
     });
   }
